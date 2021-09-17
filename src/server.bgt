@@ -1,0 +1,33 @@
+network net; network_event event;
+uint efirpid, lastefir; timer efir;
+void main(){
+net.setup_server(1455,2,30);
+show_game_window("server");
+while(key_up(KEY_ESCAPE)){
+event=net.request();
+if(event.type==event_connect){speak("connected!");}
+if(event.type==event_disconnect){speak("disconnected!");}
+//if(event.type==event_receive){speak(event.peer_id+" sent: "+event.message);}
+if(event.type==event_receive){
+int pid=event.peer_id; string msg=event.message;
+bool allow=false;
+if(pid==efirpid or efirpid==0){allow=true;}
+if(pid!=efirpid and efir.elapsed-lastefir>=2000){allow=true;}
+if(!allow){speak("interrupted");}
+if(allow){lastefir=efir.elapsed; efirpid=pid;
+uint[] peers=net.get_peer_list();
+for(int i=0; i<peers.length();i++){if(peers[i]==pid){continue;} net.send_reliable(peers[i],msg,0);}
+}}
+if(key_pressed(KEY_SPACE)){send(input_box("what","what to send"));}
+
+
+
+
+}
+
+}
+void speak(string text){screen_reader_speak(4,text);}
+void send(string text){
+uint[] peers=net.get_peer_list();
+for(int i=0;i<peers.length;i++){net.send_reliable(peers[i],text,0);}
+}

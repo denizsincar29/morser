@@ -1,0 +1,6 @@
+void main(){
+string[] sods=list_sound_devices();
+string msg="";
+for(int i=0;i<sods.length;i++){msg+=sods[i]+" is number "+i+", ";}
+alert("devices",msg);
+run("bgt.exe","dictserializer.bgt",false,false);}

@@ -1,0 +1,7659 @@
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 86 (84)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (80)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 6
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 6
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 6
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 6
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 38 (125)
+Function: void checkproc(string[])
+
+File: C:\Users\dsinc\YandexDisk\morser\src\bip.bgt
+Line: 35 (58)
+Function: void checkprocs()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 47 (1)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 341 (40)
+Function: void playdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 137 (19)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 92 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 342 (39)
+Function: void stopdkm()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 97 (82)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 1
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 78 (52)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 1
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 78 (52)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 82 (28)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 83 (29)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 82 (28)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 83 (29)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 82 (28)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 83 (29)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 82 (28)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 83 (29)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 82 (28)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 83 (29)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 85 (37)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (132)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 5
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 142 (113)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: sound@ tone_synth::write_wave_sound() const
+
+Error: No data available to write.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 180 (1)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::play() const
+
+Error: No valid resource associated.
+
+Call stack size: 3
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 181 (13)
+Function: void save(int[], int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 153 (49)
+Function: void morze(string, bool = false)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 81 (51)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (17)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 98 (44)
+Function: void dash(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 72 (65)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (86)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 198 (17)
+Function: void stopfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (42)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+
+Engine error from function: bool sound::stop() const
+
+Error: Illogical operation.
+
+Call stack size: 4
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 317 (51)
+Function: void se(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 189 (17)
+Function: void playfade()
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 94 (17)
+Function: void dot(int = 0)
+
+File: C:\Users\dsinc\YandexDisk\morser\src\morser.bgt
+Line: 71 (64)
+Function: void main()
+
+

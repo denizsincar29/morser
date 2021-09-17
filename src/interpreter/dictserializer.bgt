@@ -1,0 +1,18 @@
+void main(){
+file f; f.open("source.dict","r"); string backup=f.read();
+run("c:\\windows\\system32\\notepad.exe","source.dict",true,false);
+show_game_window("save configuration");
+f.close(); f.open("source.dict","r");
+string current=f.read();
+if(current==""){savebackup(backup);}
+string[] a=string_split(current,"\r\n",false);
+dictionary d;
+for(int i=0;i<a.length();i++){
+string[] x=string_split(a[i],"=",false);
+if(x.length()==2){d.set(x[0],x[1]);}
+}
+if(d.is_empty()){alert("error","dictionary is empty"); exit();}
+f.close(); f.open("morse.dict","w"); f.write(serialize(d));
+}
+void savebackup(string somthing){
+file ff; ff.open("source.dict","w"); ff.write(somthing); ff.close(); exit();}

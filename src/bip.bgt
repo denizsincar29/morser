@@ -1,0 +1,73 @@
+dictionary@ morsedict;
+string output; int od;
+string exclude,replace;
+string braille;
+void loaddicts(){
+file md; for(int i=0;i<5;i++){if(!md.open("interpreter/morse.dict","r")){saveserial();}else{break;} if(i==3){alert("error","error opening the dictionary!"); exit();}}
+@morsedict=deserialize(md.read()); md.close();
+morsedict.get("/russian",layouts[0]); morsedict.delete("/russian");
+morsedict.get("/english",layouts[1]); morsedict.delete("/english");
+morsedict.get("/numbers",layouts[2]); morsedict.delete("/numbers");
+morsedict.get("/punct",layouts[3]); morsedict.delete("/punct");
+morsedict.get("/braille",braille); morsedict.delete("/braille");
+morsedict.get("/replace",replace); morsedict.delete("/replace");
+morsedict.get("/output",output); morsedict.delete("/output");
+
+string layval="0";
+morsedict.get("/deflayout",layval); morsedict.delete("/deflayout");
+layout=string_to_number(layval);
+}
+tone_synth synth;
+void bipcr(){
+synth.waveform_type=3;
+synth.set_edge_fades(1,1);
+synth.freq_ms(1000,2000);
+sound@ tt=synth.write_wave_sound();
+synth.write_wave_file("sounds/beep.ogg");
+tt.play_wait();
+
+}
+//void main(){bipcr();}
+string[][] processes;
+
+
+
+void checkprocs(){for(int i=0; i<processes.length();i++){checkproc(processes[i]);}}
+void checkproc(string[] val){
+if(val.length()!=4){return;}
+if(TIME_HOUR==string_to_number(val[0]) and TIME_MINUTE==string_to_number(val[1]) and TIME_SECOND==string_to_number(val[2])){morze(val[3]);}
+}void createproc(string timme, string tekst){
+
+string[] inval=string_split(timme,":",false);
+if(inval.length()!=3){alert("error","invalid time format. canceling."); return;}
+inval.insert_last(tekst);
+processes.insert_last(inval);
+}
+void saveserial(){
+file f; f.open("source.dict","r"); string backup=f.read();
+f.close(); f.open("interpreter/source.dict","r");
+string current=f.read();
+string[] a=string_split(f.read(),"\r\n",false);
+dictionary dd;
+for(int i=0;i<a.length();i++){
+string[] x=string_split(a[i],"=",false);
+if(x.length()==2){dd.set(x[0],x[1]);}
+}
+if(dd.is_empty()){alert("error","dictionary is empty"); exit();}
+f.close(); f.open("morse.dict","w"); f.write(serialize(dd));
+
+
+
+}
+void loadprocs(){
+file prf; if(!prf.open("procs.txt","r")){return;}
+string[] prs=string_split(prf.read(),"\r\n",false);
+for(int i=0;i<prs.length();i++){
+string[] prsl=string_split(prs[i],"=",false);
+if(prsl.length()!=2){input_box("invalid format of procs.txt",prs[i],prs[i]); exit();}
+if(prsl[0][0]=="/"){
+if(prsl[0]=="/telltime"){for(int i=0;i<24;i++){createproc(i+":0:0",prsl[1]);}}
+
+}
+else{createproc(prsl[0],prsl[1]);}
+}}
