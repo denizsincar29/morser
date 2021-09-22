@@ -1,11 +1,13 @@
 network net; network_event event;
+string version;
 uint efirpid, lastefir; timer efir;
 void main(){
+file f; f.open("version.txt","r"); version=f.read();
 net.setup_server(1455,2,30);
 show_game_window("server");
-while(key_up(KEY_ESCAPE)){
+while(key_up(KEY_ESCAPE)){wait(5);
 event=net.request();
-if(event.type==event_connect){speak("connected!");}
+if(event.type==event_connect){net.send_reliable(event.peer_id,"v"+version,0); speak("connected!");}
 if(event.type==event_disconnect){speak("disconnected!");}
 //if(event.type==event_receive){speak(event.peer_id+" sent: "+event.message);}
 if(event.type==event_receive){
