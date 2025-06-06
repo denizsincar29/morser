@@ -1,0 +1,2 @@
+/telltime=/time
+21:30:0 =good evening
