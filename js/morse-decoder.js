@@ -51,6 +51,15 @@ class MorseDecoder {
             return this.decodedText;
         }
 
+        // Check if we have any large pauses (>600ms) for word space clustering
+        const maxPause = Math.max(...pauses);
+        const hasLargePause = maxPause > 600;
+        
+        // If no large pause exists, add a fake one at the end for better clustering
+        if (!hasLargePause) {
+            pauses.push(1000); // Add a fake word space pause
+        }
+
         // Cluster beeps into dots and dashes (2 clusters)
         const beepKmeans = new KMeans(2);
         beepKmeans.fit(beeps);

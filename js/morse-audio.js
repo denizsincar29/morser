@@ -11,6 +11,9 @@ class MorseAudio {
         this.useStartEnd = true;
         this.silentBeep = false;
         
+        // Queue for sequential playback
+        this.playbackQueue = Promise.resolve();
+        
         // Preload samples
         this.samples = {};
         this.loadSamples();
@@ -229,27 +232,44 @@ class MorseAudio {
         const morse = morseData.charToMorse[char.toLowerCase()];
         if (!morse) return;
         
-        if (this.soundMode === 'oldschool') {
-            this.initAudioContext();
-            let currentTime = this.audioContext.currentTime;
-            
-            await this.playSample('dkmstart', currentTime);
-            currentTime += 0.1; // Approximate duration
-            
-            for (const symbol of morse) {
-                if (symbol === '.') {
-                    await this.playSample('dot2', currentTime);
-                    currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
-                } else if (symbol === '-') {
-                    await this.playSample('dash2', currentTime);
-                    currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
+        // Queue the playback to prevent overlapping
+        this.playbackQueue = this.playbackQueue.then(async () => {
+            if (this.soundMode === 'oldschool') {
+                this.initAudioContext();
+                let currentTime = this.audioContext.currentTime;
+                
+                await this.playSample('dkmstart', currentTime);
+                currentTime += 0.1;
+                
+                for (const symbol of morse) {
+                    if (symbol === '.') {
+                        await this.playSample('dot2', currentTime);
+                        currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
+                    } else if (symbol === '-') {
+                        await this.playSample('dash2', currentTime);
+                        currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
+                    }
                 }
+                
+                await this.playSample('dkmend', currentTime);
+                
+                // Wait for the audio to finish before allowing next character
+                const duration = (currentTime + 0.1) - this.audioContext.currentTime;
+                if (duration > 0) {
+                    await new Promise(resolve => setTimeout(resolve, duration * 1000));
+                }
+                
+                // Add character gap pause
+                await new Promise(resolve => setTimeout(resolve, this.timing.charGap));
+            } else {
+                await this.playMorsePattern(morse);
+                
+                // Add character gap pause
+                await new Promise(resolve => setTimeout(resolve, this.timing.charGap));
             }
-            
-            await this.playSample('dkmend', currentTime);
-        } else {
-            await this.playMorsePattern(morse);
-        }
+        });
+        
+        return this.playbackQueue;
     }
 
     // Generate WAV file from morse text
