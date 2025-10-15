@@ -45,7 +45,7 @@ class MorseDecoder {
 
         // Separate beeps and pauses
         const beeps = this.durations.filter(d => d.type === 'beep').map(d => d.duration);
-        const pauses = this.durations.filter(d => d.type === 'pause').map(d => d.duration);
+        let pauses = this.durations.filter(d => d.type === 'pause').map(d => d.duration);
 
         if (beeps.length === 0 || pauses.length === 0) {
             return this.decodedText;
@@ -55,9 +55,12 @@ class MorseDecoder {
         const maxPause = Math.max(...pauses);
         const hasLargePause = maxPause > 600;
         
-        // If no large pause exists, add a fake one at the end for better clustering
+        // Create a copy for k-means that may include fake pause
+        let pausesForClustering = [...pauses];
+        
+        // If no large pause exists, add a fake one for better clustering
         if (!hasLargePause) {
-            pauses.push(1000); // Add a fake word space pause
+            pausesForClustering.push(1000); // Add a fake word space pause
         }
 
         // Cluster beeps into dots and dashes (2 clusters)
@@ -72,9 +75,13 @@ class MorseDecoder {
 
         // Cluster pauses into intra-char, char, and word spaces (3 clusters)
         const pauseKmeans = new KMeans(3);
-        pauseKmeans.fit(pauses);
+        pauseKmeans.fit(pausesForClustering);
         const pauseCentroids = pauseKmeans.getCentroids();
-        const pauseLabels = pauseKmeans.getLabels();
+        
+        // Get labels only for the actual pauses (not the fake one)
+        const pauseLabels = pauses.map(pause => {
+            return pauseKmeans.predict(pause);
+        });
 
         // Sort pause centroids to identify space types
         const sortedPauseCentroids = [...pauseCentroids].sort((a, b) => a - b);
@@ -110,7 +117,8 @@ class MorseDecoder {
                         morseChars.push(currentChar);
                         currentChar = '';
                     }
-                    morseChars.push(' ');
+                    // Add word space marker (will be converted to 3 spaces)
+                    morseChars.push('');
                 }
                 
                 pauseIndex++;
@@ -122,8 +130,13 @@ class MorseDecoder {
             morseChars.push(currentChar);
         }
 
-        // Join morse characters
-        this.morsePattern = morseChars.join(' ').replace(/\s+/g, ' ').trim();
+        // Join morse characters with single space, but use triple space for word separators
+        this.morsePattern = morseChars.map((char, idx) => {
+            if (char === '' && idx > 0 && idx < morseChars.length - 1) {
+                return '  '; // Two extra spaces to make 3 total (one from join)
+            }
+            return char;
+        }).join(' ').replace(/\s{4,}/g, '   ').trim();
 
         // Decode to text
         this.decodedText = morseData.morseToText(this.morsePattern);
