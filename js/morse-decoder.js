@@ -141,6 +141,9 @@ class MorseDecoder {
 
         // Decode to text
         this.decodedText = morseData.morseToText(this.morsePattern);
+        
+        // Replace ё with е in Russian text (both have same morse code)
+        this.decodedText = this.decodedText.replace(/ё/g, 'е');
 
         return this.decodedText;
     }
