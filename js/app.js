@@ -21,7 +21,6 @@ class MorserApp {
         this.setupControls();
         this.setupModals();
         this.setupRealtime();
-        this.setupDecoder();
         this.setupExercise();
         this.setupScheduler();
         
@@ -39,7 +38,7 @@ class MorserApp {
         document.getElementById('language-select').addEventListener('change', (e) => {
             morseData.setLanguage(e.target.value);
             this.saveSettings();
-            this.updateStatus(`Language changed to ${e.target.options[e.target.selectedIndex].text}`);
+            // Removed status update - NVDA announces it automatically
         });
 
         // Sound mode
@@ -47,7 +46,7 @@ class MorserApp {
             morseAudio.setSoundMode(e.target.value);
             this.saveSettings();
             this.updateSoundModeUI(e.target.value);
-            this.updateStatus(`Sound mode: ${e.target.options[e.target.selectedIndex].text}`);
+            // Removed status update - NVDA announces it automatically
         });
 
         // Speed slider
@@ -88,7 +87,19 @@ class MorserApp {
             pitchControl.style.display = 'block';
             synthOptions.style.display = 'block';
             if (speedControl) speedControl.style.display = 'block';
+            
+            // Restore saved synth WPM if available
+            if (this.savedSynthWPM) {
+                morseAudio.setWPM(this.savedSynthWPM);
+                document.getElementById('speed-slider').value = this.savedSynthWPM;
+                document.getElementById('speed-value').textContent = this.savedSynthWPM;
+            }
         } else {
+            // Save current synth WPM before switching
+            if (morseAudio.soundMode === 'synth') {
+                this.savedSynthWPM = morseAudio.wpm;
+            }
+            
             pitchControl.style.display = 'none';
             synthOptions.style.display = 'none';
             if (speedControl) speedControl.style.display = 'none';
@@ -127,15 +138,6 @@ class MorserApp {
 
         document.getElementById('close-realtime-btn').addEventListener('click', () => {
             this.closeModal('realtime-modal');
-        });
-
-        // Decoder
-        document.getElementById('decoder-btn').addEventListener('click', () => {
-            this.openModal('decoder-modal');
-        });
-
-        document.getElementById('close-decoder-btn').addEventListener('click', () => {
-            this.closeModal('decoder-modal');
         });
 
         // Exercise
@@ -264,6 +266,7 @@ class MorserApp {
                 if (e.key.length === 1 && !e.ctrlKey && !e.altKey) {
                     e.preventDefault();
                     const char = e.key.toLowerCase();
+                    // Play character and wait for completion before updating display
                     await morseAudio.playCharacter(char);
                     letterDisplay.textContent = char.toUpperCase();
                 }
@@ -368,112 +371,6 @@ class MorserApp {
         this.updateStatus(`Decoded: ${decoded.length} characters`);
     }
 
-    setupDecoder() {
-        const startBtn = document.getElementById('start-recording-btn');
-        const stopBtn = document.getElementById('stop-recording-btn');
-        const decodedOutput = document.getElementById('decoded-output');
-        const statusDiv = document.getElementById('decoder-status');
-
-        startBtn.addEventListener('click', () => {
-            this.decoder.startRecording();
-            startBtn.disabled = true;
-            stopBtn.disabled = false;
-            statusDiv.textContent = 'Recording... Use spacebar or arrow keys';
-            decodedOutput.textContent = '';
-            
-            // Setup key listeners
-            this.setupDecoderKeys();
-        });
-
-        stopBtn.addEventListener('click', () => {
-            this.decoder.stopRecording();
-            const decoded = this.decoder.decode();
-            
-            startBtn.disabled = false;
-            stopBtn.disabled = false;
-            document.getElementById('download-morse-btn').disabled = false;
-            document.getElementById('download-text-btn').disabled = false;
-            
-            decodedOutput.textContent = decoded || 'No text decoded';
-            statusDiv.textContent = `Decoded: ${decoded.length} characters`;
-            
-            // Remove key listeners
-            this.removeDecoderKeys();
-        });
-
-        document.getElementById('download-morse-btn').addEventListener('click', () => {
-            const durations = this.decoder.exportDurations();
-            const blob = new Blob([JSON.stringify(durations)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'recording.morse';
-            a.click();
-            URL.revokeObjectURL(url);
-        });
-
-        document.getElementById('download-text-btn').addEventListener('click', () => {
-            const text = this.decoder.getDecodedText();
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'decoded.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        });
-    }
-
-    setupDecoderKeys() {
-        this.decoderKeyDown = async (e) => {
-            if (e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-                e.preventDefault();
-                
-                if (!this.keyDownTime) {
-                    this.keyDownTime = Date.now();
-                    
-                    // Add pause since last key if exists
-                    if (this.lastKeyUpTime) {
-                        const pause = this.keyDownTime - this.lastKeyUpTime;
-                        this.decoder.addPause(pause);
-                    }
-                }
-            }
-        };
-
-        this.decoderKeyUp = (e) => {
-            if (e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-                e.preventDefault();
-                
-                if (this.keyDownTime) {
-                    const duration = Date.now() - this.keyDownTime;
-                    this.decoder.addBeep(duration);
-                    this.lastKeyUpTime = Date.now();
-                    this.keyDownTime = null;
-                    
-                    // Decode after 500ms pause
-                    clearTimeout(this.decodeTimeout);
-                    this.decodeTimeout = setTimeout(() => {
-                        const decoded = this.decoder.decode();
-                        document.getElementById('decoded-output').textContent = decoded;
-                    }, 500);
-                }
-            }
-        };
-
-        document.addEventListener('keydown', this.decoderKeyDown);
-        document.addEventListener('keyup', this.decoderKeyUp);
-    }
-
-    removeDecoderKeys() {
-        if (this.decoderKeyDown) {
-            document.removeEventListener('keydown', this.decoderKeyDown);
-        }
-        if (this.decoderKeyUp) {
-            document.removeEventListener('keyup', this.decoderKeyUp);
-        }
-    }
-
     setupExercise() {
         document.getElementById('start-exercise-btn').addEventListener('click', () => {
             this.startExercise();
@@ -550,13 +447,10 @@ class MorserApp {
         const feedback = document.getElementById('exercise-feedback');
         if (mistakes === 0) {
             feedback.textContent = '✓ Good job!';
-            feedback.setAttribute('aria-live', 'polite');
         } else if (mistakes === 1) {
             feedback.textContent = '✗ 1 error!';
-            feedback.setAttribute('aria-live', 'polite');
         } else {
             feedback.textContent = `✗ ${mistakes} errors!`;
-            feedback.setAttribute('aria-live', 'polite');
         }
         
         // Clear input for next group
@@ -616,9 +510,10 @@ class MorserApp {
         
         if (!timeStr || !text) return;
         
+        // Parse HH:MM:SS from time input
         const parts = timeStr.split(':');
-        if (parts.length !== 3) {
-            alert('Invalid time format. Use HH:MM:SS');
+        if (parts.length < 2) {
+            alert('Invalid time format');
             return;
         }
         
@@ -626,7 +521,7 @@ class MorserApp {
             id: Date.now(),
             hour: parseInt(parts[0]),
             minute: parseInt(parts[1]),
-            second: parseInt(parts[2]),
+            second: parts.length > 2 ? parseInt(parts[2]) : 0,
             text: text,
             enabled: true
         };
