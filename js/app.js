@@ -266,9 +266,10 @@ class MorserApp {
                 if (e.key.length === 1 && !e.ctrlKey && !e.altKey) {
                     e.preventDefault();
                     const char = e.key.toLowerCase();
-                    // Play character and wait for completion before updating display
-                    await morseAudio.playCharacter(char);
+                    // Update display BEFORE playing so screen reader announces it first
                     letterDisplay.textContent = char.toUpperCase();
+                    // Then play the morse audio
+                    await morseAudio.playCharacter(char);
                 }
             } else if (mode === 'spacebar' || mode === 'decoder') {
                 // Spacebar/arrow keying (with optional decoding)
@@ -380,10 +381,21 @@ class MorserApp {
             this.stopExercise();
         });
 
-        document.getElementById('exercise-input').addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && this.exerciseActive) {
-                e.preventDefault();
-                this.checkAndNextExercise();
+        // Auto-advance when user types enough characters (no Enter key needed)
+        document.getElementById('exercise-input').addEventListener('input', (e) => {
+            if (!this.exerciseActive) return;
+            
+            const input = e.target.value;
+            const expected = this.currentGroup || '';
+            
+            // Check if user typed enough characters
+            if (input.length >= expected.length) {
+                // Wait 500ms then check and advance
+                setTimeout(() => {
+                    if (this.exerciseActive && document.getElementById('exercise-input').value.length >= expected.length) {
+                        this.checkAndNextExercise();
+                    }
+                }, 500);
             }
         });
     }
@@ -400,7 +412,7 @@ class MorserApp {
         document.getElementById('stop-exercise-btn').disabled = false;
         document.getElementById('exercise-input-area').hidden = false;
         document.getElementById('exercise-input').value = '';
-        document.getElementById('exercise-results').textContent = 'Exercise started! Listen and type what you hear, then press Enter.';
+        document.getElementById('exercise-results').textContent = 'Exercise started! Listen and type what you hear.';
         
         // Start the 1-minute timer
         this.exerciseTimer = setTimeout(() => {
