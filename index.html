@@ -38,7 +38,7 @@
                 </select>
             </div>
 
-            <div class="control-group">
+            <div class="control-group" id="speed-control">
                 <label for="speed-slider">Speed (WPM): <span id="speed-value">20</span></label>
                 <input type="range" id="speed-slider" min="5" max="40" value="20" aria-label="Morse speed in words per minute">
             </div>
@@ -131,14 +131,25 @@
                 <select id="input-mode" aria-label="Select input mode">
                     <option value="keyboard">Keyboard Typing</option>
                     <option value="spacebar">Spacebar Keying</option>
+                    <option value="decoder">Spacebar Decoder (K-means)</option>
                 </select>
             </div>
             
-            <div id="morse-input-area" tabindex="0" role="textbox" aria-label="Morse input area" aria-live="polite">
+            <div id="morse-input-area" tabindex="0" role="textbox" aria-label="Morse input area. Use spacebar or arrow keys to input morse" aria-live="polite">
                 Click here and start typing...
             </div>
             
             <div id="letter-display" aria-live="assertive" aria-atomic="true"></div>
+            
+            <div id="decoder-controls" style="display: none;">
+                <div class="button-group">
+                    <button id="start-recording-realtime-btn">Start Recording</button>
+                    <button id="stop-recording-realtime-btn" disabled>Stop Recording</button>
+                    <button id="download-morse-realtime-btn" disabled>Download .morse</button>
+                    <button id="download-text-realtime-btn" disabled>Download Text</button>
+                </div>
+                <div id="decoded-output-realtime" aria-live="polite" aria-atomic="true"></div>
+            </div>
             
             <button id="close-realtime-btn">Close</button>
         </div>

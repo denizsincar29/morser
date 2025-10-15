@@ -82,13 +82,23 @@ class MorserApp {
     updateSoundModeUI(mode) {
         const pitchControl = document.getElementById('pitch-control');
         const synthOptions = document.getElementById('synth-options');
+        const speedControl = document.getElementById('speed-control');
         
         if (mode === 'synth') {
             pitchControl.style.display = 'block';
             synthOptions.style.display = 'block';
+            if (speedControl) speedControl.style.display = 'block';
         } else {
             pitchControl.style.display = 'none';
             synthOptions.style.display = 'none';
+            if (speedControl) speedControl.style.display = 'none';
+            
+            // Set fixed WPM values
+            if (mode === 'telegraph') {
+                document.getElementById('speed-value').textContent = '26';
+            } else if (mode === 'oldschool') {
+                document.getElementById('speed-value').textContent = '14';
+            }
         }
     }
 
@@ -149,6 +159,14 @@ class MorserApp {
     }
 
     openModal(id) {
+        // Close all other modals first
+        const allModals = document.querySelectorAll('.modal');
+        allModals.forEach(modal => {
+            if (modal.id !== id) {
+                modal.hidden = true;
+            }
+        });
+        
         const modal = document.getElementById(id);
         modal.hidden = false;
         modal.querySelector('.modal-content').focus();
@@ -194,6 +212,49 @@ class MorserApp {
         const inputArea = document.getElementById('morse-input-area');
         const letterDisplay = document.getElementById('letter-display');
         const inputMode = document.getElementById('input-mode');
+        const decoderControls = document.getElementById('decoder-controls');
+
+        // Handle mode changes
+        inputMode.addEventListener('change', (e) => {
+            if (e.target.value === 'decoder') {
+                decoderControls.style.display = 'block';
+                letterDisplay.textContent = '';
+            } else {
+                decoderControls.style.display = 'none';
+                document.getElementById('decoded-output-realtime').textContent = '';
+            }
+        });
+
+        // Setup decoder buttons
+        document.getElementById('start-recording-realtime-btn').addEventListener('click', () => {
+            this.startRealtimeDecoding();
+        });
+
+        document.getElementById('stop-recording-realtime-btn').addEventListener('click', () => {
+            this.stopRealtimeDecoding();
+        });
+
+        document.getElementById('download-morse-realtime-btn').addEventListener('click', () => {
+            const durations = this.decoder.exportDurations();
+            const blob = new Blob([JSON.stringify(durations)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'recording.morse';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('download-text-realtime-btn').addEventListener('click', () => {
+            const text = this.decoder.getDecodedText();
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'decoded.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
 
         inputArea.addEventListener('keydown', async (e) => {
             const mode = inputMode.value;
@@ -206,17 +267,25 @@ class MorserApp {
                     await morseAudio.playCharacter(char);
                     letterDisplay.textContent = char.toUpperCase();
                 }
-            } else if (mode === 'spacebar') {
-                // Spacebar/arrow keying
+            } else if (mode === 'spacebar' || mode === 'decoder') {
+                // Spacebar/arrow keying (with optional decoding)
                 if (e.key === ' ' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
                     e.preventDefault();
                     if (!this.keyDownTime) {
                         this.keyDownTime = Date.now();
                         
+                        // Add pause for decoder mode
+                        if (mode === 'decoder' && this.isDecoderRecording && this.lastKeyUpTime) {
+                            const pause = this.keyDownTime - this.lastKeyUpTime;
+                            this.decoder.addPause(pause);
+                        }
+                        
                         if (e.key === 'ArrowLeft') {
                             await morseAudio.playDot();
+                            if (mode === 'spacebar') letterDisplay.textContent = '.';
                         } else if (e.key === 'ArrowRight') {
                             await morseAudio.playDash();
+                            if (mode === 'spacebar') letterDisplay.textContent = '-';
                         } else {
                             // Spacebar - play based on duration
                             morseAudio.initAudioContext();
@@ -239,7 +308,7 @@ class MorserApp {
         inputArea.addEventListener('keyup', (e) => {
             const mode = inputMode.value;
 
-            if (mode === 'spacebar' && e.key === ' ') {
+            if ((mode === 'spacebar' || mode === 'decoder') && e.key === ' ') {
                 e.preventDefault();
                 
                 if (this.currentOscillator) {
@@ -250,11 +319,53 @@ class MorserApp {
                 
                 if (this.keyDownTime) {
                     const duration = Date.now() - this.keyDownTime;
-                    letterDisplay.textContent = duration < 200 ? '.' : '-';
+                    
+                    if (mode === 'spacebar') {
+                        letterDisplay.textContent = duration < 200 ? '.' : '-';
+                    } else if (mode === 'decoder' && this.isDecoderRecording) {
+                        // Add beep to decoder
+                        this.decoder.addBeep(duration);
+                        this.lastKeyUpTime = Date.now();
+                        
+                        // Decode after 500ms pause
+                        clearTimeout(this.decodeTimeout);
+                        this.decodeTimeout = setTimeout(() => {
+                            const decoded = this.decoder.decode();
+                            document.getElementById('decoded-output-realtime').textContent = decoded;
+                        }, 500);
+                    }
+                    
                     this.keyDownTime = null;
                 }
             }
         });
+    }
+
+    startRealtimeDecoding() {
+        this.decoder.startRecording();
+        this.isDecoderRecording = true;
+        this.lastKeyUpTime = null;
+        
+        document.getElementById('start-recording-realtime-btn').disabled = true;
+        document.getElementById('stop-recording-realtime-btn').disabled = false;
+        document.getElementById('decoded-output-realtime').textContent = '';
+        
+        this.updateStatus('Recording started - use spacebar or arrow keys');
+    }
+
+    stopRealtimeDecoding() {
+        this.decoder.stopRecording();
+        this.isDecoderRecording = false;
+        const decoded = this.decoder.decode();
+        
+        document.getElementById('start-recording-realtime-btn').disabled = false;
+        document.getElementById('stop-recording-realtime-btn').disabled = true;
+        document.getElementById('download-morse-realtime-btn').disabled = false;
+        document.getElementById('download-text-realtime-btn').disabled = false;
+        
+        document.getElementById('decoded-output-realtime').textContent = decoded || 'No text decoded';
+        
+        this.updateStatus(`Decoded: ${decoded.length} characters`);
     }
 
     setupDecoder() {

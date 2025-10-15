@@ -74,6 +74,13 @@ class MorseAudio {
 
     setSoundMode(mode) {
         this.soundMode = mode;
+        
+        // Set fixed WPM for telegraph modes
+        if (mode === 'telegraph') {
+            this.setWPM(26);
+        } else if (mode === 'oldschool') {
+            this.setWPM(14);
+        }
     }
 
     setUseStartEnd(use) {
@@ -179,8 +186,43 @@ class MorseAudio {
     }
 
     async playText(text) {
-        const morse = morseData.textToMorse(text);
-        return this.playMorsePattern(morse);
+        if (this.soundMode === 'oldschool') {
+            // Play character by character with dkm sounds
+            this.initAudioContext();
+            let currentTime = this.audioContext.currentTime;
+            
+            for (const char of text.toLowerCase()) {
+                const morse = morseData.charToMorse[char];
+                if (!morse) {
+                    // Skip unknown characters
+                    if (char === ' ') {
+                        currentTime += this.timing.wordGap / 1000;
+                    }
+                    continue;
+                }
+                
+                await this.playSample('dkmstart', currentTime);
+                currentTime += 0.1;
+                
+                for (const symbol of morse) {
+                    if (symbol === '.') {
+                        await this.playSample('dot2', currentTime);
+                        currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
+                    } else if (symbol === '-') {
+                        await this.playSample('dash2', currentTime);
+                        currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
+                    }
+                }
+                
+                await this.playSample('dkmend', currentTime);
+                currentTime += 0.1 + this.timing.charGap / 1000;
+            }
+            
+            return (currentTime - this.audioContext.currentTime) * 1000;
+        } else {
+            const morse = morseData.textToMorse(text);
+            return this.playMorsePattern(morse);
+        }
     }
 
     async playCharacter(char) {
