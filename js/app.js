@@ -8,7 +8,6 @@ class MorserApp {
         this.exerciseChars = '';
         this.exerciseStartTime = null;
         this.exerciseMistakes = 0;
-        this.scheduledTasks = [];
         
         this.init();
     }
@@ -22,13 +21,9 @@ class MorserApp {
         this.setupModals();
         this.setupRealtime();
         this.setupExercise();
-        this.setupScheduler();
         
         // Load settings from localStorage
         this.loadSettings();
-        
-        // Start scheduler check
-        this.checkScheduledTasks();
         
         this.updateStatus('Ready to use Morser!');
     }
@@ -150,14 +145,6 @@ class MorserApp {
         });
 
         // Scheduler
-        document.getElementById('scheduler-btn').addEventListener('click', () => {
-            this.openModal('scheduler-modal');
-            this.displayScheduledTasks();
-        });
-
-        document.getElementById('close-scheduler-btn').addEventListener('click', () => {
-            this.closeModal('scheduler-modal');
-        });
     }
 
     openModal(id) {
@@ -266,9 +253,7 @@ class MorserApp {
                 if (e.key.length === 1 && !e.ctrlKey && !e.altKey) {
                     e.preventDefault();
                     const char = e.key.toLowerCase();
-                    // Update display BEFORE playing so screen reader announces it first
-                    letterDisplay.textContent = char.toUpperCase();
-                    // Then play the morse audio
+                    // Play the morse audio (no letter announcement)
                     await morseAudio.playCharacter(char);
                 }
             } else if (mode === 'spacebar' || mode === 'decoder') {
@@ -510,87 +495,6 @@ class MorserApp {
         this.finishExercise();
     }
 
-    setupScheduler() {
-        document.getElementById('add-schedule-btn').addEventListener('click', () => {
-            this.addScheduledTask();
-        });
-    }
-
-    addScheduledTask() {
-        const timeStr = document.getElementById('schedule-time').value;
-        const text = document.getElementById('schedule-text').value;
-        
-        if (!timeStr || !text) return;
-        
-        // Parse HH:MM:SS from time input
-        const parts = timeStr.split(':');
-        if (parts.length < 2) {
-            alert('Invalid time format');
-            return;
-        }
-        
-        const task = {
-            id: Date.now(),
-            hour: parseInt(parts[0]),
-            minute: parseInt(parts[1]),
-            second: parts.length > 2 ? parseInt(parts[2]) : 0,
-            text: text,
-            enabled: true
-        };
-        
-        this.scheduledTasks.push(task);
-        this.saveScheduledTasks();
-        this.displayScheduledTasks();
-        
-        document.getElementById('schedule-time').value = '';
-        document.getElementById('schedule-text').value = '';
-    }
-
-    displayScheduledTasks() {
-        const list = document.getElementById('schedules');
-        list.innerHTML = '';
-        
-        this.scheduledTasks.forEach(task => {
-            const li = document.createElement('li');
-            li.textContent = `${task.hour}:${task.minute}:${task.second} - ${task.text}`;
-            
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Remove';
-            removeBtn.addEventListener('click', () => {
-                this.scheduledTasks = this.scheduledTasks.filter(t => t.id !== task.id);
-                this.saveScheduledTasks();
-                this.displayScheduledTasks();
-            });
-            
-            li.appendChild(removeBtn);
-            list.appendChild(li);
-        });
-    }
-
-    checkScheduledTasks() {
-        setInterval(() => {
-            const now = new Date();
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentSecond = now.getSeconds();
-            
-            this.scheduledTasks.forEach(async task => {
-                if (task.enabled && 
-                    task.hour === currentHour && 
-                    task.minute === currentMinute && 
-                    task.second === currentSecond) {
-                    
-                    task.enabled = false; // Prevent repeated firing
-                    await morseAudio.playText(task.text);
-                    
-                    setTimeout(() => {
-                        task.enabled = true;
-                    }, 1000);
-                }
-            });
-        }, 1000);
-    }
-
     updateStatus(message) {
         document.getElementById('status-message').textContent = message;
     }
@@ -649,21 +553,6 @@ class MorserApp {
             }
         } catch (error) {
             console.error('Failed to load settings:', error);
-        }
-    }
-
-    saveScheduledTasks() {
-        localStorage.setItem('morser-scheduled', JSON.stringify(this.scheduledTasks));
-    }
-
-    loadScheduledTasks() {
-        const saved = localStorage.getItem('morser-scheduled');
-        if (saved) {
-            try {
-                this.scheduledTasks = JSON.parse(saved);
-            } catch (error) {
-                console.error('Failed to load scheduled tasks:', error);
-            }
         }
     }
 }

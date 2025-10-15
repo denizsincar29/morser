@@ -85,11 +85,6 @@
                     <span class="btn-icon">🎓</span>
                     Receiving Exercise
                 </button>
-                
-                <button id="scheduler-btn" class="mode-btn">
-                    <span class="btn-icon">⏰</span>
-                    Schedule Morse
-                </button>
             </div>
         </section>
 
@@ -174,35 +169,6 @@
             <div id="exercise-results" aria-live="polite"></div>
             
             <button id="close-exercise-btn">Close</button>
-        </div>
-    </div>
-
-    <!-- Scheduler Modal -->
-    <div id="scheduler-modal" class="modal" role="dialog" aria-labelledby="scheduler-title" aria-modal="true" hidden>
-        <div class="modal-content">
-            <h2 id="scheduler-title">Schedule Morse Messages</h2>
-            
-            <p>Note: Scheduled morse may not play due to browser autoplay restrictions. Use with user interaction.</p>
-            
-            <div class="control-group">
-                <label for="schedule-time">Time:</label>
-                <input type="time" id="schedule-time" step="1" aria-label="Schedule time">
-            </div>
-            
-            <div class="control-group">
-                <label for="schedule-text">Message:</label>
-                <textarea id="schedule-text" rows="3" aria-label="Message to morse at scheduled time"></textarea>
-            </div>
-            
-            <div class="button-group">
-                <button id="add-schedule-btn">Add Schedule</button>
-                <button id="close-scheduler-btn">Close</button>
-            </div>
-            
-            <div id="scheduled-list" aria-live="polite">
-                <h3>Scheduled Messages:</h3>
-                <ul id="schedules"></ul>
-            </div>
         </div>
     </div>
 
