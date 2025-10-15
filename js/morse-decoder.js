@@ -51,18 +51,6 @@ class MorseDecoder {
             return this.decodedText;
         }
 
-        // Check if we have any large pauses (>600ms) for word space clustering
-        const maxPause = Math.max(...pauses);
-        const hasLargePause = maxPause > 600;
-        
-        // Create a copy for k-means that may include fake pause
-        let pausesForClustering = [...pauses];
-        
-        // If no large pause exists, add a fake one for better clustering
-        if (!hasLargePause) {
-            pausesForClustering.push(1000); // Add a fake word space pause
-        }
-
         // Cluster beeps into dots and dashes (2 clusters)
         const beepKmeans = new KMeans(2);
         beepKmeans.fit(beeps);
@@ -72,13 +60,26 @@ class MorseDecoder {
         // Determine which cluster is dot and which is dash
         const dotCluster = beepCentroids[0] < beepCentroids[1] ? 0 : 1;
         const dashCluster = 1 - dotCluster;
+        
+        // Calculate dot duration from beep clustering
+        const dotDuration = beepCentroids[dotCluster];
+
+        // Create enhanced pause dataset for better clustering
+        // Add synthetic pauses at standard morse intervals to guide clustering
+        let pausesForClustering = [...pauses];
+        
+        // Add guide pauses based on dot duration
+        // Intra-char should be ~1 dot, char should be ~3 dots, word should be ~7 dots
+        pausesForClustering.push(dotDuration * 1);      // Intra-char guide
+        pausesForClustering.push(dotDuration * 3);      // Char space guide  
+        pausesForClustering.push(dotDuration * 7);      // Word space guide
 
         // Cluster pauses into intra-char, char, and word spaces (3 clusters)
         const pauseKmeans = new KMeans(3);
         pauseKmeans.fit(pausesForClustering);
         const pauseCentroids = pauseKmeans.getCentroids();
         
-        // Get labels only for the actual pauses (not the fake one)
+        // Get labels only for the actual pauses (not the guide ones)
         const pauseLabels = pauses.map(pause => {
             return pauseKmeans.predict(pause);
         });
