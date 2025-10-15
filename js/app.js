@@ -483,9 +483,10 @@ class MorserApp {
             this.stopExercise();
         });
 
-        document.getElementById('exercise-input').addEventListener('input', (e) => {
-            if (this.exerciseActive) {
-                this.checkExerciseInput(e.target.value);
+        document.getElementById('exercise-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && this.exerciseActive) {
+                e.preventDefault();
+                this.checkAndNextExercise();
             }
         });
     }
@@ -493,55 +494,114 @@ class MorserApp {
     async startExercise() {
         const lettersPerGroup = parseInt(document.getElementById('letters-per-group').value);
         
-        this.exerciseChars = morseData.getRandomGroup(lettersPerGroup, true, false);
         this.exerciseStartTime = Date.now();
-        this.exerciseMistakes = 0;
+        this.exerciseGroups = [];
         this.exerciseActive = true;
+        this.currentGroupIndex = 0;
         
         document.getElementById('start-exercise-btn').disabled = true;
         document.getElementById('stop-exercise-btn').disabled = false;
         document.getElementById('exercise-input-area').hidden = false;
         document.getElementById('exercise-input').value = '';
-        document.getElementById('exercise-results').textContent = '';
+        document.getElementById('exercise-results').textContent = 'Exercise started! Listen and type what you hear, then press Enter.';
+        
+        // Start the 1-minute timer
+        this.exerciseTimer = setTimeout(() => {
+            this.finishExercise();
+        }, 60000); // 1 minute
+        
+        // Play first group
+        await this.playNextGroup(lettersPerGroup);
+    }
+
+    async playNextGroup(lettersPerGroup) {
+        if (!this.exerciseActive) return;
+        
+        const chars = morseData.getRandomGroup(lettersPerGroup, true, false);
+        this.currentGroup = chars;
         
         // Play the morse
-        await morseAudio.playText(this.exerciseChars);
+        await morseAudio.playText(chars);
         
         document.getElementById('exercise-input').focus();
     }
 
-    checkExerciseInput(input) {
-        const expected = this.exerciseChars.substring(0, input.length);
-        if (input !== expected) {
-            this.exerciseMistakes++;
+    async checkAndNextExercise() {
+        const input = document.getElementById('exercise-input').value.trim().toLowerCase();
+        const expected = this.currentGroup.toLowerCase();
+        
+        // Calculate mistakes
+        let mistakes = 0;
+        for (let i = 0; i < Math.max(input.length, expected.length); i++) {
+            if (input[i] !== expected[i]) mistakes++;
         }
         
-        if (input.length >= this.exerciseChars.length) {
-            this.stopExercise();
+        const accuracy = expected.length > 0 ? ((expected.length - mistakes) / expected.length * 100).toFixed(0) : 0;
+        
+        // Store result
+        this.exerciseGroups.push({
+            expected: expected,
+            typed: input,
+            mistakes: mistakes,
+            accuracy: accuracy
+        });
+        
+        // Give feedback
+        const feedback = document.getElementById('exercise-feedback');
+        if (mistakes === 0) {
+            feedback.textContent = '✓ Good job!';
+            feedback.setAttribute('aria-live', 'polite');
+        } else if (mistakes === 1) {
+            feedback.textContent = '✗ 1 error!';
+            feedback.setAttribute('aria-live', 'polite');
+        } else {
+            feedback.textContent = `✗ ${mistakes} errors!`;
+            feedback.setAttribute('aria-live', 'polite');
         }
+        
+        // Clear input for next group
+        document.getElementById('exercise-input').value = '';
+        
+        // Play next group
+        const lettersPerGroup = parseInt(document.getElementById('letters-per-group').value);
+        await this.playNextGroup(lettersPerGroup);
     }
 
-    stopExercise() {
+    finishExercise() {
         if (!this.exerciseActive) return;
         
-        const duration = (Date.now() - this.exerciseStartTime) / 1000;
-        const input = document.getElementById('exercise-input').value;
-        const accuracy = ((this.exerciseChars.length - this.exerciseMistakes) / this.exerciseChars.length * 100).toFixed(1);
-        
         this.exerciseActive = false;
+        clearTimeout(this.exerciseTimer);
         
         document.getElementById('start-exercise-btn').disabled = false;
         document.getElementById('stop-exercise-btn').disabled = true;
+        document.getElementById('exercise-input-area').hidden = true;
         
-        const results = `
-            Expected: ${this.exerciseChars}
-            You typed: ${input}
-            Time: ${duration.toFixed(1)}s
-            Mistakes: ${this.exerciseMistakes}
-            Accuracy: ${accuracy}%
-        `;
+        // Calculate statistics
+        const totalGroups = this.exerciseGroups.length;
+        const totalMistakes = this.exerciseGroups.reduce((sum, g) => sum + g.mistakes, 0);
+        const avgAccuracy = totalGroups > 0 
+            ? (this.exerciseGroups.reduce((sum, g) => sum + parseFloat(g.accuracy), 0) / totalGroups).toFixed(1)
+            : 0;
         
-        document.getElementById('exercise-results').textContent = results;
+        // Build detailed statistics
+        let stats = `\n=== Exercise Complete ===\n`;
+        stats += `Time: 1 minute\n`;
+        stats += `Groups completed: ${totalGroups}\n`;
+        stats += `Total mistakes: ${totalMistakes}\n`;
+        stats += `Average accuracy: ${avgAccuracy}%\n\n`;
+        stats += `Details:\n`;
+        
+        this.exerciseGroups.forEach((group, idx) => {
+            stats += `${idx + 1}. Expected: "${group.expected}" | Typed: "${group.typed}" | Accuracy: ${group.accuracy}%\n`;
+        });
+        
+        document.getElementById('exercise-results').textContent = stats;
+        document.getElementById('exercise-feedback').textContent = '';
+    }
+
+    stopExercise() {
+        this.finishExercise();
     }
 
     setupScheduler() {

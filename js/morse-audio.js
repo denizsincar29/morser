@@ -185,7 +185,14 @@ class MorseAudio {
             }
         }
         
-        return (currentTime - this.audioContext.currentTime) * 1000;
+        const duration = (currentTime - this.audioContext.currentTime) * 1000;
+        
+        // Wait for audio to finish if using synth mode
+        if (this.soundMode === 'synth' && duration > 0) {
+            await new Promise(resolve => setTimeout(resolve, duration));
+        }
+        
+        return duration;
     }
 
     async playText(text) {
