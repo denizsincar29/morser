@@ -1,1 +1,0 @@
-start bgt.exe dictserializer.bgt

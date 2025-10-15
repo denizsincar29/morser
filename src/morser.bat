@@ -1,1 +1,0 @@
-start interpreter\bgt.exe morser.bgt
