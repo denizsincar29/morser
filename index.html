@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Morse Code Trainer for the Blind - Learn and practice morse code with accessible interfaces">
+    <title>Morser - Morse Code Trainer</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#1a1a2e">
+</head>
+<body>
+    <header>
+        <h1>Morser - Morse Code Trainer</h1>
+        <p>Accessible morse code learning for everyone</p>
+    </header>
+
+    <main>
+        <section id="controls" aria-label="Audio Controls">
+            <h2>Audio Settings</h2>
+            
+            <div class="control-group">
+                <label for="language-select">Language:</label>
+                <select id="language-select" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                    <option value="de">German</option>
+                    <option value="tr">Turkish</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="sound-mode">Sound Mode:</label>
+                <select id="sound-mode" aria-label="Select sound mode">
+                    <option value="synth">Sine Wave (Synth)</option>
+                    <option value="telegraph">Telegraph Sound</option>
+                    <option value="oldschool">Old School Telegraph</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="speed-control">
+                <label for="speed-slider">Speed (WPM): <span id="speed-value">20</span></label>
+                <input type="range" id="speed-slider" min="5" max="40" value="20" aria-label="Morse speed in words per minute">
+            </div>
+
+            <div class="control-group" id="pitch-control">
+                <label for="pitch-slider">Pitch (Hz): <span id="pitch-value">800</span></label>
+                <input type="range" id="pitch-slider" min="400" max="1200" value="800" aria-label="Morse tone pitch in hertz">
+            </div>
+
+            <div class="control-group">
+                <label for="audio-device">Audio Device:</label>
+                <select id="audio-device" aria-label="Select audio output device">
+                    <option value="default">Default Device</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="synth-options">
+                <label>
+                    <input type="checkbox" id="use-start-end" checked>
+                    Use start/end sounds
+                </label>
+                <label>
+                    <input type="checkbox" id="silent-beep">
+                    Silent beep (start/end only)
+                </label>
+            </div>
+        </section>
+
+        <section id="modes" aria-label="Application Modes">
+            <h2>Modes</h2>
+            
+            <div class="mode-buttons">
+                <button id="translate-btn" class="mode-btn">
+                    <span class="btn-icon">📝</span>
+                    Text to Morse
+                </button>
+                
+                <button id="realtime-btn" class="mode-btn">
+                    <span class="btn-icon">⌨️</span>
+                    Real-time Input
+                </button>
+                
+                <button id="exercise-btn" class="mode-btn">
+                    <span class="btn-icon">🎓</span>
+                    Receiving Exercise
+                </button>
+            </div>
+        </section>
+
+        <section id="status" aria-live="polite" aria-atomic="true">
+            <p id="status-message">Ready</p>
+        </section>
+    </main>
+
+    <!-- Text to Morse Translation Modal -->
+    <div id="translate-modal" class="modal" role="dialog" aria-labelledby="translate-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <h2 id="translate-title">Text to Morse Translation</h2>
+            <label for="translate-text">Enter text to translate:</label>
+            <textarea id="translate-text" rows="5" aria-label="Text to translate to morse"></textarea>
+            
+            <div class="button-group">
+                <button id="generate-morse-btn">Generate Morse</button>
+                <button id="download-audio-btn" disabled style="display: none;">Download Audio</button>
+                <button id="close-translate-btn">Close</button>
+            </div>
+            
+            <div id="morse-output" aria-live="polite"></div>
+            <audio id="morse-audio" controls hidden></audio>
+        </div>
+    </div>
+
+    <!-- Real-time Morse Input Modal -->
+    <div id="realtime-modal" class="modal" role="dialog" aria-labelledby="realtime-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <h2 id="realtime-title">Real-time Morse Input</h2>
+            
+            <div class="control-group">
+                <label for="input-mode">Input Mode:</label>
+                <select id="input-mode" aria-label="Select input mode">
+                    <option value="keyboard">Keyboard Typing</option>
+                    <option value="spacebar">Spacebar Keying</option>
+                    <option value="decoder">Spacebar Decoder (K-means)</option>
+                </select>
+            </div>
+            
+            <div id="morse-input-area" tabindex="0" role="textbox" aria-label="Morse input area. Use spacebar or arrow keys to input morse" aria-live="polite">
+                Click here and start typing...
+            </div>
+            
+            <div id="letter-display" aria-live="assertive" aria-atomic="true"></div>
+            
+            <div id="decoder-controls" style="display: none;">
+                <div class="button-group">
+                    <button id="start-recording-realtime-btn">Start Recording</button>
+                    <button id="stop-recording-realtime-btn" disabled>Stop Recording</button>
+                    <button id="download-morse-realtime-btn" disabled>Download .morse</button>
+                    <button id="download-text-realtime-btn" disabled>Download Text</button>
+                </div>
+                <div id="decoded-output-realtime" aria-live="polite" aria-atomic="true"></div>
+            </div>
+            
+            <button id="close-realtime-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Exercise Modal -->
+    <div id="exercise-modal" class="modal" role="dialog" aria-labelledby="exercise-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <h2 id="exercise-title">Receiving Exercise</h2>
+            
+            <div class="control-group">
+                <label for="letters-per-group">Letters per group:</label>
+                <input type="number" id="letters-per-group" min="1" max="10" value="5" aria-label="Number of letters per group">
+            </div>
+            
+            <div class="button-group">
+                <button id="start-exercise-btn">Start Exercise</button>
+                <button id="stop-exercise-btn" disabled>Stop Exercise</button>
+            </div>
+            
+            <div id="exercise-input-area" hidden>
+                <label for="exercise-input">Type what you heard:</label>
+                <input type="text" id="exercise-input" aria-label="Exercise input. Type what you heard">
+            </div>
+            
+            <div id="exercise-feedback" aria-live="assertive" aria-atomic="true"></div>
+            <div id="exercise-results" aria-live="polite"></div>
+            
+            <button id="close-exercise-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="js/morse-data.js"></script>
+    <script src="js/kmeans.js"></script>
+    <script src="js/morse-decoder.js"></script>
+    <script src="js/morse-audio.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.error('Service Worker registration failed:', err));
+        }
+    </script>
+</body>
+</html>
