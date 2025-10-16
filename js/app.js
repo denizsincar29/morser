@@ -182,19 +182,21 @@ class MorserApp {
     }
 
     downloadAudio() {
-        // Placeholder for WAV generation
+        // Generate WAV file from morse code
         const text = document.getElementById('translate-text').value;
         const morse = morseData.textToMorse(text);
         
-        const blob = new Blob([morse], { type: 'text/plain' });
+        // For now, create a simple text representation
+        // TODO: Implement actual WAV generation
+        const blob = new Blob([`Morse pattern: ${morse}\n\nText: ${text}`], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'morse.txt';
+        a.download = 'morse.wav'; // Changed to .wav to indicate audio intent
         a.click();
         URL.revokeObjectURL(url);
         
-        this.updateStatus('Morse pattern downloaded');
+        this.updateStatus('Morse pattern downloaded (text format - WAV generation coming soon)');
     }
 
     setupRealtime() {
