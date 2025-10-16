@@ -168,33 +168,83 @@ class MorseAudio {
         }
     }
 
-    async playMorsePattern(pattern) {
+    async playMorsePattern(pattern, useOldschoolSounds = true) {
         this.initAudioContext();
         
         let currentTime = this.audioContext.currentTime;
-        let i = 0;
         
-        while (i < pattern.length) {
-            const char = pattern[i];
-            if (char === '.') {
-                await this.playDot(currentTime);
-                currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
-                i++;
-            } else if (char === '-') {
-                await this.playDash(currentTime);
-                currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
-                i++;
-            } else if (char === ' ') {
-                // Check for triple space (word gap)
-                if (i + 2 < pattern.length && pattern[i+1] === ' ' && pattern[i+2] === ' ') {
+        // Split pattern into characters for oldschool mode
+        if (this.soundMode === 'oldschool' && useOldschoolSounds) {
+            const chars = pattern.split('   '); // Split by word spaces (triple space)
+            
+            for (let wordIdx = 0; wordIdx < chars.length; wordIdx++) {
+                const word = chars[wordIdx];
+                const letters = word.split(' '); // Split by character spaces
+                
+                for (let letterIdx = 0; letterIdx < letters.length; letterIdx++) {
+                    const letterPattern = letters[letterIdx];
+                    if (!letterPattern) continue;
+                    
+                    // Play dkmstart
+                    await this.playSample('dkmstart', currentTime);
+                    currentTime += 0.05; // Small delay for dkmstart
+                    
+                    // Play dots and dashes
+                    for (let i = 0; i < letterPattern.length; i++) {
+                        if (letterPattern[i] === '.') {
+                            await this.playSample('dot2', currentTime);
+                            currentTime += this.timing.dot / 1000;
+                        } else if (letterPattern[i] === '-') {
+                            await this.playSample('dash2', currentTime);
+                            currentTime += this.timing.dash / 1000;
+                        }
+                        // Intra-character pause
+                        if (i < letterPattern.length - 1) {
+                            currentTime += this.timing.intraChar / 1000;
+                        }
+                    }
+                    
+                    // Play dkmend
+                    await this.playSample('dkmend', currentTime);
+                    currentTime += 0.05; // Small delay for dkmend
+                    
+                    // Character gap (if not last letter in word)
+                    if (letterIdx < letters.length - 1) {
+                        currentTime += this.timing.charGap / 1000;
+                    }
+                }
+                
+                // Word gap (if not last word)
+                if (wordIdx < chars.length - 1) {
                     currentTime += this.timing.wordGap / 1000;
-                    i += 3; // Skip all three spaces
+                }
+            }
+        } else {
+            // Standard playback for synth/telegraph modes or spacebar mode
+            let i = 0;
+            
+            while (i < pattern.length) {
+                const char = pattern[i];
+                if (char === '.') {
+                    await this.playDot(currentTime);
+                    currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
+                    i++;
+                } else if (char === '-') {
+                    await this.playDash(currentTime);
+                    currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
+                    i++;
+                } else if (char === ' ') {
+                    // Check for triple space (word gap)
+                    if (i + 2 < pattern.length && pattern[i+1] === ' ' && pattern[i+2] === ' ') {
+                        currentTime += this.timing.wordGap / 1000;
+                        i += 3; // Skip all three spaces
+                    } else {
+                        currentTime += this.timing.charGap / 1000;
+                        i++;
+                    }
                 } else {
-                    currentTime += this.timing.charGap / 1000;
                     i++;
                 }
-            } else {
-                i++;
             }
         }
         
@@ -210,7 +260,7 @@ class MorseAudio {
 
     async playText(text) {
         const morse = morseData.textToMorse(text);
-        return this.playMorsePattern(morse);
+        return this.playMorsePattern(morse, true); // Use oldschool sounds for text-to-morse
     }
 
     async playCharacter(char) {
@@ -219,7 +269,7 @@ class MorseAudio {
         
         // Queue the playback to prevent overlapping
         this.playbackQueue = this.playbackQueue.then(async () => {
-            await this.playMorsePattern(morse);
+            await this.playMorsePattern(morse, false); // Don't use oldschool dkm sounds for individual characters in keyboard mode
             
             // Add character gap pause
             await new Promise(resolve => setTimeout(resolve, this.timing.charGap));
