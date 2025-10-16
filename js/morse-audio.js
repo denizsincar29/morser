@@ -185,28 +185,33 @@ class MorseAudio {
                     const letterPattern = letters[letterIdx];
                     if (!letterPattern) continue;
                     
-                    // Play dkmstart
-                    await this.playSample('dkmstart', currentTime);
-                    currentTime += 0.05; // Small delay for dkmstart
+                    // Check if this is a space character - use pause instead of dkm sounds
+                    const isSpace = letterPattern === '';
                     
-                    // Play dots and dashes
-                    for (let i = 0; i < letterPattern.length; i++) {
-                        if (letterPattern[i] === '.') {
-                            await this.playSample('dot2', currentTime);
-                            currentTime += this.timing.dot / 1000;
-                        } else if (letterPattern[i] === '-') {
-                            await this.playSample('dash2', currentTime);
-                            currentTime += this.timing.dash / 1000;
+                    if (!isSpace) {
+                        // Play dkmstart
+                        await this.playSample('dkmstart', currentTime);
+                        currentTime += 0.05; // Small delay for dkmstart
+                        
+                        // Play dots and dashes
+                        for (let i = 0; i < letterPattern.length; i++) {
+                            if (letterPattern[i] === '.') {
+                                await this.playSample('dot2', currentTime);
+                                currentTime += this.timing.dot / 1000;
+                            } else if (letterPattern[i] === '-') {
+                                await this.playSample('dash2', currentTime);
+                                currentTime += this.timing.dash / 1000;
+                            }
+                            // Intra-character pause
+                            if (i < letterPattern.length - 1) {
+                                currentTime += this.timing.intraChar / 1000;
+                            }
                         }
-                        // Intra-character pause
-                        if (i < letterPattern.length - 1) {
-                            currentTime += this.timing.intraChar / 1000;
-                        }
+                        
+                        // Play dkmend
+                        await this.playSample('dkmend', currentTime);
+                        currentTime += 0.05; // Small delay for dkmend
                     }
-                    
-                    // Play dkmend
-                    await this.playSample('dkmend', currentTime);
-                    currentTime += 0.05; // Small delay for dkmend
                     
                     // Character gap (if not last letter in word)
                     if (letterIdx < letters.length - 1) {
@@ -214,7 +219,7 @@ class MorseAudio {
                     }
                 }
                 
-                // Word gap (if not last word)
+                // Word gap (if not last word) - just use pause, no dkm sounds
                 if (wordIdx < chars.length - 1) {
                     currentTime += this.timing.wordGap / 1000;
                 }
@@ -269,7 +274,7 @@ class MorseAudio {
         
         // Queue the playback to prevent overlapping
         this.playbackQueue = this.playbackQueue.then(async () => {
-            await this.playMorsePattern(morse, false); // Don't use oldschool dkm sounds for individual characters in keyboard mode
+            await this.playMorsePattern(morse, true); // Use oldschool dkm sounds for keyboard mode too
             
             // Add character gap pause
             await new Promise(resolve => setTimeout(resolve, this.timing.charGap));
