@@ -112,11 +112,8 @@ class MorserApp {
             if (morseAudio.soundMode === 'synth') this._savedSynthWPM = morseAudio.wpm;
             pitchControl.style.display = 'none';
             synthOptions.style.display = 'none';
-            speedControl.style.display = '';
+            speedControl.style.display = 'none';
             speedSlider.disabled = true;
-            const fixedWPM = mode === 'telegraph' ? 40 : 15;
-            speedSlider.value = fixedWPM;
-            speedValue.textContent = fixedWPM;
         }
     }
 
@@ -159,9 +156,6 @@ class MorserApp {
             morseAudio.setWPM(settings.wpm);
             document.getElementById('speed-slider').value = settings.wpm;
             document.getElementById('speed-value').textContent = settings.wpm;
-        } else if (soundMode !== 'synth') {
-            document.getElementById('speed-slider').value = morseAudio.wpm;
-            document.getElementById('speed-value').textContent = morseAudio.wpm;
         }
         if (settings.pitch) {
             morseAudio.setPitch(settings.pitch);

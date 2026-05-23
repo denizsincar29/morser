@@ -70,6 +70,30 @@ class MorseAudio {
         };
     }
 
+    _getPlaybackTiming() {
+        if (this.soundMode === 'telegraph') {
+            return {
+                dot: 23,
+                dash: 69,
+                intra: 23,
+                charGap: 69,
+                wordGap: 161,
+            };
+        }
+
+        if (this.soundMode === 'oldschool') {
+            return {
+                dot: 80,
+                dash: 240,
+                intra: 10,
+                charGap: 240,
+                wordGap: 560,
+            };
+        }
+
+        return this.timing;
+    }
+
     setWPM(wpm)          { this.wpm = wpm;     this._updateTiming(); }
     setPitch(pitch)      { this.pitch = pitch; }
     setUseStartEnd(v)    { this.useStartEnd = v; }
@@ -77,8 +101,6 @@ class MorseAudio {
 
     setSoundMode(mode) {
         this.soundMode = mode;
-        if (mode === 'telegraph') this.setWPM(40);
-        else if (mode === 'oldschool') this.setWPM(15);
     }
 
     stopPlayback() {
@@ -145,12 +167,13 @@ class MorseAudio {
     async playDot() {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
+        const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
             dur = await this._synthElement(true, when);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
-            dur = await this._scheduleSample(name, when) || this.timing.dot / 1000;
+            dur = await this._scheduleSample(name, when) || timing.dot / 1000;
         }
         await this._sleep(dur * 1000);
     }
@@ -158,12 +181,13 @@ class MorseAudio {
     async playDash() {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
+        const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
             dur = await this._synthElement(false, when);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
-            dur = await this._scheduleSample(name, when) || this.timing.dash / 1000;
+            dur = await this._scheduleSample(name, when) || timing.dash / 1000;
         }
         await this._sleep(dur * 1000);
     }
@@ -176,6 +200,7 @@ class MorseAudio {
         this.initAudioContext();
         let t = this.audioContext.currentTime + 0.05;  // small scheduling headroom
         const startT = t;
+        const timing = this._getPlaybackTiming();
 
         // Pre-compute total duration for progress reporting
         const totalDur = this._estimateDuration(pattern);
@@ -207,18 +232,18 @@ class MorseAudio {
                             t += await this._synthElement(true, t);
                         } else {
                             const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
-                            t += await this._scheduleSample(name, t) || this.timing.dot / 1000;
+                            t += await this._scheduleSample(name, t) || timing.dot / 1000;
                         }
                     } else if (sym === '-') {
                         if (this.soundMode === 'synth') {
                             t += await this._synthElement(false, t);
                         } else {
                             const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
-                            t += await this._scheduleSample(name, t) || this.timing.dash / 1000;
+                            t += await this._scheduleSample(name, t) || timing.dash / 1000;
                         }
                     }
                     // Intra-character gap (between elements, not after last one)
-                    if (ci < letter.length - 1) t += this.timing.intra / 1000;
+                    if (ci < letter.length - 1) t += timing.intra / 1000;
                 }
 
                 if (this.soundMode === 'oldschool') {
@@ -228,11 +253,11 @@ class MorseAudio {
 
                 // BUG FIX: Inter-character gap = charGap, NOT charGap + intra
                 // Only add if not last letter in this word
-                if (li < letters.length - 1) t += this.timing.charGap / 1000;
+                if (li < letters.length - 1) t += timing.charGap / 1000;
             }
 
             // Word gap (but not after last word)
-            if (wi < chars.length - 1) t += this.timing.wordGap / 1000;
+            if (wi < chars.length - 1) t += timing.wordGap / 1000;
 
             // Progress callback
             if (onProgress && totalDur > 0) {
@@ -249,6 +274,7 @@ class MorseAudio {
     }
 
     _estimateDuration(pattern) {
+        const timing = this._getPlaybackTiming();
         let d = 0;
         const chars = pattern.split('   ');
         for (let wi = 0; wi < chars.length; wi++) {
@@ -256,12 +282,12 @@ class MorseAudio {
             for (let li = 0; li < letters.length; li++) {
                 const letter = letters[li];
                 for (let ci = 0; ci < letter.length; ci++) {
-                    d += letter[ci] === '.' ? this.timing.dot : this.timing.dash;
-                    if (ci < letter.length - 1) d += this.timing.intra;
+                    d += letter[ci] === '.' ? timing.dot : timing.dash;
+                    if (ci < letter.length - 1) d += timing.intra;
                 }
-                if (li < letters.length - 1) d += this.timing.charGap;
+                if (li < letters.length - 1) d += timing.charGap;
             }
-            if (wi < chars.length - 1) d += this.timing.wordGap;
+            if (wi < chars.length - 1) d += timing.wordGap;
         }
         return d / 1000;
     }
@@ -288,7 +314,7 @@ class MorseAudio {
     generateWAVBuffer(text) {
         const sampleRate = 44100;
         const morse = morseData.textToMorse(text);
-        const t = this.timing;
+        const t = this._getPlaybackTiming();
 
         // Build array of {start, duration} for each beep
         const beeps = [];
