@@ -151,8 +151,8 @@ class MorseAudio {
 
     // ── Play a single dot/dash in synth mode ──────────────────────────────────
     // Returns duration in seconds
-    async _synthElement(isDot, when, pitch = this.pitch) {
-        const dur = isDot ? this.timing.dot : this.timing.dash;
+    async _synthElement(isDot, when, pitch = this.pitch, durationMs = null) {
+        const dur = durationMs ?? (isDot ? this.timing.dot : this.timing.dash);
         if (this.useStartEnd) {
             await this._scheduleSample('start', when);
         }
@@ -164,13 +164,13 @@ class MorseAudio {
     }
 
     // ── Play dot (standalone, for spacebar mode) ──────────────────────────────
-    async playDot(pitch = this.pitch) {
+    async playDot(pitch = this.pitch, durationMs = null) {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
         const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
-            dur = await this._synthElement(true, when, pitch);
+            dur = await this._synthElement(true, when, pitch, durationMs);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
             dur = await this._scheduleSample(name, when) || timing.dot / 1000;
@@ -178,13 +178,13 @@ class MorseAudio {
         await this._sleep(dur * 1000);
     }
 
-    async playDash(pitch = this.pitch) {
+    async playDash(pitch = this.pitch, durationMs = null) {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
         const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
-            dur = await this._synthElement(false, when, pitch);
+            dur = await this._synthElement(false, when, pitch, durationMs);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
             dur = await this._scheduleSample(name, when) || timing.dash / 1000;

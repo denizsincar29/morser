@@ -1,16 +1,8 @@
 // ─── Together Mode — WebRTC P2P co-morsing ──────────────────────────────────
-// Inspired by denizsincar29/web_midi_streamer's webrtc.js and rooms.js
-//
-// Architecture: each peer holds a spacebar key state (keydown/keyup timestamps).
-// On keydown: broadcast {type:'morse_start', ts} to all peers
-// On keyup:   broadcast {type:'morse_end',   ts, duration}
-// Peers play the signal via morseAudio based on received duration.
-//
-// Signaling: same WebSocket signaling server protocol as web_midi_streamer.
-// Each peer joins via: ws://<host>/signal?room=<room>&peer=<id>
-// Messages: join · sdp · ice · (keepalive)
-//
-// Change SIGNAL_URL below to point at your signaling server.
+// Architecture: each peer captures explicit press-start / press-stop timing.
+// On keydown: broadcast {type:'morse_start', startedAt} to all peers
+// On keyup:   broadcast {type:'morse_end', endedAt, duration} to all peers
+// Peers reconstruct the sender's rhythm from those timestamps.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SIGNAL_URL = (room, peer) => {
@@ -71,6 +63,8 @@ class TogetherMode {
             document.getElementById('transcript-output').textContent = '';
         });
 
+        this._setSignalNoticeVisible(false);
+
         // Auto-fill room from URL
         const urlRoom = new URLSearchParams(location.search).get('room');
         if (urlRoom) {
@@ -97,11 +91,13 @@ class TogetherMode {
         document.getElementById('room-link-area').hidden = true;
 
         this._togetherStatus('Connecting…', 'warning');
+        this._setSignalNoticeVisible(false);
 
         try {
             await this._connect(room);
         } catch (e) {
             this._togetherStatus(`Could not connect to signaling server: ${e.message}`, 'error');
+            this._setSignalNoticeVisible(true);
         }
     }
 
@@ -232,11 +228,13 @@ class TogetherMode {
 
     _startSignal() {
         if (this._myKeyDown) return;
-        this._myKeyDown = Date.now();
+        const startedAt = performance.now();
+        this._myKeyDown = startedAt;
+        const poorConnectionMode = this._usesPoorConnectionMode();
 
         // Add pause since last key-up if applicable
         if (this._myLastUp) {
-            const pause = this._myKeyDown - this._myLastUp;
+            const pause = startedAt - this._myLastUp;
             this._myMorseBuffer.push({ type: 'pause', duration: pause });
         }
 
@@ -254,14 +252,21 @@ class TogetherMode {
         document.getElementById('together-key-pad').classList.add('keying');
         document.getElementById('together-key-pad').setAttribute('aria-pressed', 'true');
 
-        this._broadcast({ type: 'morse_start', name: this.myName, pitch: morseAudio.pitch });
+        this._broadcast({
+            type: 'morse_start',
+            name: this.myName,
+            pitch: morseAudio.pitch,
+            ...(poorConnectionMode ? { startedAt } : {}),
+        });
     }
 
     _endSignal() {
         if (!this._myKeyDown) return;
-        const duration = Date.now() - this._myKeyDown;
+        const endedAt = performance.now();
+        const duration = endedAt - this._myKeyDown;
+        const poorConnectionMode = this._usesPoorConnectionMode();
         this._myKeyDown = null;
-        this._myLastUp  = Date.now();
+        this._myLastUp  = endedAt;
 
         // Stop live audio
         if (this._liveOsc) {
@@ -283,22 +288,35 @@ class TogetherMode {
             document.getElementById('together-letter-display').textContent = '';
             this._setMyMorse('');
         }
-        this._myMorseBuffer.push({ type: 'beep', duration });
+        this._myMorseBuffer.push({ type: 'beep', duration, startedAt: endedAt - duration, endedAt });
 
-        this._broadcast({ type: 'morse_end', name: this.myName, duration, pitch: morseAudio.pitch });
+        this._broadcast({
+            type: 'morse_end',
+            name: this.myName,
+            pitch: morseAudio.pitch,
+            ...(poorConnectionMode ? { startedAt: endedAt - duration, endedAt, duration } : {}),
+        });
 
-        // Schedule decode of self's buffer
+        // Schedule decode of self's buffer only when decoding is enabled.
         clearTimeout(this._decoderTimeout);
-        this._decoderTimeout = setTimeout(() => {
-            this._decodeAndAppendTranscript('You', this._myMorseBuffer);
+        if (morseAudio.useKMeansDecoding) {
+            this._decoderTimeout = setTimeout(() => {
+                this._decodeAndAppendTranscript('You', this._myMorseBuffer);
+                this._myMorseBuffer = [];
+                this._myLastUp = null;
+                this._setMyMorse('');
+                document.getElementById('together-letter-display').textContent = '';
+            }, 2000);
+        } else {
             this._myMorseBuffer = [];
             this._myLastUp = null;
             this._setMyMorse('');
             document.getElementById('together-letter-display').textContent = '';
-        }, 2000);
+        }
     }
 
     _decodeAndAppendTranscript(name, buffer) {
+        if (!morseAudio.useKMeansDecoding) return;
         if (!buffer || buffer.length === 0) return;
 
         const beeps = buffer.filter(e => e.type === 'beep');
@@ -330,6 +348,36 @@ class TogetherMode {
         line.innerHTML = `<span style="color:var(--accent)">${this._esc(name)}:</span> ${this._esc(text)}`;
         out.appendChild(line);
         out.scrollTop = out.scrollHeight;
+    }
+
+    _usesPoorConnectionMode() {
+        return !!window.morserApp?.poorConnectionMode;
+    }
+
+    _startPeerTone(peer, pitch) {
+        if (peer._toneOsc) return;
+        morseAudio.initAudioContext();
+        const osc = morseAudio.audioContext.createOscillator();
+        const gain = morseAudio.audioContext.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = pitch;
+        osc.connect(gain);
+        gain.connect(morseAudio.audioContext.destination);
+        gain.gain.setValueAtTime(0, morseAudio.audioContext.currentTime);
+        gain.gain.linearRampToValueAtTime(0.3, morseAudio.audioContext.currentTime + 0.005);
+        osc.start();
+        peer._toneOsc = osc;
+        peer._toneGain = gain;
+    }
+
+    _stopPeerTone(peer) {
+        if (!peer._toneOsc) return;
+        const ctx = morseAudio.audioContext;
+        peer._toneGain.gain.setValueAtTime(0.3, ctx.currentTime);
+        peer._toneGain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.005);
+        peer._toneOsc.stop(ctx.currentTime + 0.01);
+        peer._toneOsc = null;
+        peer._toneGain = null;
     }
 
     async _runPingTest() {
@@ -421,44 +469,64 @@ class TogetherMode {
         }
 
         if (msg.type === 'morse_start') {
-            peer.keyDownTime = Date.now();
+            const timestamped = typeof msg.startedAt === 'number';
+            const startedAt = timestamped ? msg.startedAt : performance.now();
+            peer.keyDownTime = startedAt;
             if (typeof msg.pitch === 'number') peer.pitch = msg.pitch;
             if (peer.lastKeyUpTime) {
                 peer.morseBuffer = peer.morseBuffer || [];
-                peer.morseBuffer.push({ type: 'pause', duration: peer.keyDownTime - peer.lastKeyUpTime });
+                peer.morseBuffer.push({ type: 'pause', duration: startedAt - peer.lastKeyUpTime });
+            }
+            if (!timestamped) {
+                this._startPeerTone(peer, peer.pitch);
             }
             this._setPeerMorse(fromId, '▌');
             return;
         }
 
         if (msg.type === 'morse_end') {
-            const duration = msg.duration || 100;
+            const timestamped = typeof msg.endedAt === 'number' || typeof msg.startedAt === 'number';
+            const endedAt = typeof msg.endedAt === 'number' ? msg.endedAt : performance.now();
+            const duration = typeof msg.duration === 'number'
+                ? msg.duration
+                : (endedAt - (typeof peer.keyDownTime === 'number' ? peer.keyDownTime : endedAt));
             const pitch = typeof msg.pitch === 'number' ? msg.pitch : (peer.pitch || morseAudio.pitch);
             peer.pitch = pitch;
             peer.keyDownTime = null;
-            peer.lastKeyUpTime = Date.now();
+            peer.lastKeyUpTime = endedAt;
             peer.morseBuffer = peer.morseBuffer || [];
             peer.morseBuffer.push({ type: 'beep', duration });
 
-            const symbol = duration < 200 ? '·' : '—';
-            this._setPeerMorse(fromId, symbol);
+            if (!timestamped) {
+                this._stopPeerTone(peer);
+            }
 
-            // Play audio for remote peer in-order and at the sender's pitch
-            peer.playbackQueue = (peer.playbackQueue || Promise.resolve()).then(async () => {
-                if (duration < 200) await morseAudio.playDot(pitch);
-                else                await morseAudio.playDash(pitch);
-            }).catch(err => console.error('[Together] remote playback:', err));
+            this._setPeerMorse(fromId, duration < 200 ? '·' : '—');
+
+            if (timestamped) {
+                // Play the sender's press length after release when poor connection mode is used.
+                peer.playbackQueue = (peer.playbackQueue || Promise.resolve()).then(async () => {
+                    if (duration < 200) await morseAudio.playDot(pitch, duration);
+                    else                await morseAudio.playDash(pitch, duration);
+                }).catch(err => console.error('[Together] remote playback:', err));
+            }
 
             // Schedule decode
             clearTimeout(peer._decodeTimeout);
-            peer._decodeTimeout = setTimeout(() => {
-                if (peer.morseBuffer?.length >= 2) {
-                    this._decodeAndAppendTranscript(peer.name || fromId.slice(0,6), peer.morseBuffer);
-                }
+            if (morseAudio.useKMeansDecoding) {
+                peer._decodeTimeout = setTimeout(() => {
+                    if (peer.morseBuffer?.length >= 2) {
+                        this._decodeAndAppendTranscript(peer.name || fromId.slice(0,6), peer.morseBuffer);
+                    }
+                    peer.morseBuffer = [];
+                    peer.lastKeyUpTime = null;
+                    this._setPeerMorse(fromId, '');
+                }, 2000);
+            } else {
                 peer.morseBuffer = [];
                 peer.lastKeyUpTime = null;
                 this._setPeerMorse(fromId, '');
-            }, 2000);
+            }
             return;
         }
 
@@ -567,6 +635,11 @@ class TogetherMode {
         keyPad?.focus();
     }
 
+    _setSignalNoticeVisible(visible) {
+        const notice = document.getElementById('signaling-notice');
+        if (notice) notice.hidden = !visible;
+    }
+
     _wsSend(obj) {
         if (this.ws?.readyState === WebSocket.OPEN)
             this.ws.send(JSON.stringify(obj));
@@ -652,6 +725,7 @@ class TogetherMode {
                 this._togetherStatus(`Connected to peer ${remoteId.slice(0,6)}`, 'connected');
             }
             if (s === 'failed' || s === 'closed') {
+                this._stopPeerTone(state);
                 for (const [id, pending] of this._pingPending) {
                     if (pending.peerId === remoteId) {
                         clearTimeout(pending.timeout);
@@ -702,6 +776,7 @@ class TogetherMode {
         this._pingPending.clear();
         this.ws?.close(); this.ws = null;
         for (const [id, p] of this.peers) {
+            this._stopPeerTone(p);
             p.dc?.close(); p.pc?.close();
             this._removeParticipant(id);
         }

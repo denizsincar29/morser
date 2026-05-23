@@ -55,6 +55,13 @@
                 </label>
             </div>
 
+            <div class="setting-block">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="poor-connection-mode">
+                    Poor connection mode for Together
+                </label>
+            </div>
+
             <div class="setting-block" id="speed-control">
                 <label for="speed-slider">Speed — <span id="speed-value">20</span> WPM</label>
                 <input type="range" id="speed-slider" min="5" max="40" value="20" aria-label="Morse speed in words per minute">
@@ -305,10 +312,9 @@
         <div id="together-status" class="together-status" aria-live="polite"></div>
 
         <!-- No-server notice -->
-        <div id="signaling-notice" class="notice-box">
+        <div id="signaling-notice" class="notice-box" hidden>
             <strong>📡 Signaling server required.</strong>
-            Together Mode needs a WebSocket signaling server (same as
-            <a href="https://github.com/denizsincar29/web_midi_streamer" target="_blank" rel="noopener">web_midi_streamer</a>).
+            Together Mode needs a reachable WebSocket signaling server.
             Set <code>SIGNAL_URL</code> in <code>js/together.js</code> to your server address.
         </div>
     </section>

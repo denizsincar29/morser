@@ -16,6 +16,7 @@ class MorserApp {
         this.keyDownTime = null;
         this.currentOscillator = null;
         this.useKMeansDecoding = false;
+        this.poorConnectionMode = false;
         this.exerciseActive = false;
         this.exerciseGroups = [];
         this.currentGroup = '';
@@ -75,6 +76,11 @@ class MorserApp {
                 this.isDecoderRecording = false;
                 this.lastKeyUpTime = null;
             }
+            this.saveSettings();
+        });
+
+        document.getElementById('poor-connection-mode').addEventListener('change', e => {
+            this.poorConnectionMode = e.target.checked;
             this.saveSettings();
         });
 
@@ -160,6 +166,7 @@ class MorserApp {
                 language:    morseData.currentLanguage,
                 soundMode:   morseAudio.soundMode,
                 kmeansDecoding: this.useKMeansDecoding,
+                poorConnectionMode: this.poorConnectionMode,
                 wpm:         morseAudio.wpm,
                 pitch:       morseAudio.pitch,
                 useStartEnd: morseAudio.useStartEnd,
@@ -194,6 +201,8 @@ class MorserApp {
         morseAudio.useKMeansDecoding = this.useKMeansDecoding;
         document.getElementById('kmeans-decoding').checked = this.useKMeansDecoding;
         this.updateKMeansDecodingUI(this.useKMeansDecoding);
+        this.poorConnectionMode = !!settings.poorConnectionMode;
+        document.getElementById('poor-connection-mode').checked = this.poorConnectionMode;
         if (soundMode === 'synth' && settings.wpm) {
             morseAudio.setWPM(settings.wpm);
             document.getElementById('speed-slider').value = settings.wpm;

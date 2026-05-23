@@ -1,4 +1,4 @@
-const CACHE_NAME = 'morser-v2.2.8';
+const CACHE_NAME = 'morser-v2.2.9';
 const ASSETS = [
     './',
     './index.html',
