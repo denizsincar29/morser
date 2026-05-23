@@ -39,9 +39,16 @@ class MorserApp {
 
     setStatus(msg, type = '') {
         const bar = document.getElementById('status-bar');
-        bar.textContent = msg;
-        bar.className = type;
-        document.getElementById('status-message').textContent = msg;
+        const message = document.getElementById('status-message');
+
+        if (bar) {
+            bar.textContent = msg;
+            bar.className = type;
+        }
+
+        if (message) {
+            message.textContent = msg;
+        }
     }
 
     // ── Settings ───────────────────────────────────────────────────────────────

@@ -51,6 +51,7 @@ rsync -av --checksum --delete \
     --exclude='node_modules/' \
     --exclude='*.sh'          \
     --exclude='*.md'          \
+    --exclude='.gitattributes' \
     --exclude='*.bak'         \
     --exclude='*.py'          \
     "$SRC/" "$DEST/"
