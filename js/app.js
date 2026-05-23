@@ -76,7 +76,27 @@ class MorserApp {
         document.getElementById('pitch-slider').addEventListener('input', e => {
             const hz = parseInt(e.target.value);
             document.getElementById('pitch-value').textContent = hz;
-            morseAudio.setPitch(hz);
+            morseAudio.previewPitch(hz);
+            this.saveSettings();
+        });
+
+        document.getElementById('pitch-slider').addEventListener('keydown', e => {
+            if (!e.ctrlKey || !['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                return;
+            }
+
+            e.preventDefault();
+            const slider = e.currentTarget;
+            const step = 10;
+            const min = parseInt(slider.min, 10) || 0;
+            const max = parseInt(slider.max, 10) || 2000;
+            const current = parseInt(slider.value, 10) || 0;
+            const delta = (e.key === 'ArrowUp' || e.key === 'ArrowRight') ? step : -step;
+            const next = Math.min(max, Math.max(min, current + delta));
+
+            slider.value = next;
+            document.getElementById('pitch-value').textContent = next;
+            morseAudio.previewPitch(next);
             this.saveSettings();
         });
 
@@ -214,6 +234,11 @@ class MorserApp {
             document.querySelectorAll('.mode-card').forEach(b => b.setAttribute('aria-expanded', 'false'));
             panel.hidden = false;
             btn.setAttribute('aria-expanded', 'true');
+            if (panelId === 'realtime-panel') {
+                this.typedBuffer = '';
+                document.getElementById('typed-output').textContent = '';
+                document.getElementById('letter-display').textContent = '';
+            }
             // Focus first focusable element in panel
             setTimeout(() => {
                 const first = panel.querySelector('textarea, input, select, button:not(.close-btn)');

@@ -77,7 +77,7 @@ class MorseAudio {
                 dash: 69,
                 intra: 23,
                 charGap: 69,
-                wordGap: 161,
+                wordGap: 193,
             };
         }
 
@@ -85,8 +85,8 @@ class MorseAudio {
             return {
                 dot: 80,
                 dash: 240,
-                intra: 10,
-                charGap: 240,
+                intra: 80,
+                charGap: 160,
                 wordGap: 560,
             };
         }
@@ -303,9 +303,29 @@ class MorseAudio {
         if (!morse) return;
         this._charQueue = (this._charQueue || Promise.resolve()).then(async () => {
             await this.playMorsePattern(morse);
-            await this._sleep(this.timing.charGap);
         });
         return this._charQueue;
+    }
+
+    previewPitch(hz) {
+        this.setPitch(hz);
+        this.initAudioContext();
+
+        const start = this.audioContext.currentTime;
+        const end = start + 0.08;
+        const osc = this.audioContext.createOscillator();
+        const gain = this.audioContext.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.value = hz;
+        osc.connect(gain);
+        gain.connect(this.audioContext.destination);
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.25, start + 0.005);
+        gain.gain.setValueAtTime(0.25, end - 0.01);
+        gain.gain.linearRampToValueAtTime(0, end);
+        osc.start(start);
+        osc.stop(end + 0.01);
     }
 
     // ── WAV generation ─────────────────────────────────────────────────────────
