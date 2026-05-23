@@ -273,7 +273,11 @@ class TogetherMode {
         document.getElementById('together-key-pad').setAttribute('aria-pressed', 'false');
 
         const symbol = duration < 200 ? '·' : '—';
-        document.getElementById('together-letter-display').textContent = symbol;
+        if (morseAudio.useKMeansDecoding) {
+            document.getElementById('together-letter-display').textContent = symbol;
+        } else {
+            document.getElementById('together-letter-display').textContent = '';
+        }
         this._myMorseBuffer.push({ type: 'beep', duration });
         this._setMyMorse(symbol);
 

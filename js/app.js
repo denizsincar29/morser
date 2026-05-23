@@ -509,7 +509,11 @@ class MorserApp {
 
         if (mode === 'spacebar') {
             const isDot = duration < 200;
-            letterDisp.textContent = isDot ? '·' : '—';
+            if (this.useKMeansDecoding) {
+                letterDisp.textContent = isDot ? '·' : '—';
+            } else {
+                letterDisp.textContent = '';
+            }
         }
 
         if (morseAudio.useKMeansDecoding && this.isDecoderRecording) {
