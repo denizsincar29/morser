@@ -275,11 +275,12 @@ class TogetherMode {
         const symbol = duration < 200 ? '·' : '—';
         if (morseAudio.useKMeansDecoding) {
             document.getElementById('together-letter-display').textContent = symbol;
+            this._setMyMorse(symbol);
         } else {
             document.getElementById('together-letter-display').textContent = '';
+            this._setMyMorse('');
         }
         this._myMorseBuffer.push({ type: 'beep', duration });
-        this._setMyMorse(symbol);
 
         this._broadcast({ type: 'morse_end', name: this.myName, duration });
 
