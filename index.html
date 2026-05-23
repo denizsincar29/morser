@@ -48,6 +48,13 @@
                 </select>
             </div>
 
+            <div class="setting-block">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="kmeans-decoding">
+                    Use K-means decoding
+                </label>
+            </div>
+
             <div class="setting-block" id="speed-control">
                 <label for="speed-slider">Speed — <span id="speed-value">20</span> WPM</label>
                 <input type="range" id="speed-slider" min="5" max="40" value="20" aria-label="Morse speed in words per minute">
@@ -148,7 +155,6 @@
             <select id="input-mode" aria-label="Select input mode">
                 <option value="keyboard">Keyboard — type letters</option>
                 <option value="spacebar">Spacebar — manual keying</option>
-                <option value="decoder">Spacebar + Decoder (K-means)</option>
             </select>
         </div>
 
@@ -273,7 +279,7 @@
             </div>
 
             <div class="together-key-area">
-                <div id="together-key-pad" tabindex="0" role="button"
+                <div id="together-key-pad" class="morse-input-area" tabindex="0" role="button"
                     aria-label="Morse key. Hold Space or click to send morse signal"
                     aria-pressed="false">
                     <span class="key-label">HOLD TO KEY</span>

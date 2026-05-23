@@ -274,26 +274,32 @@ button:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 
 /* ─── Morse input area ─────────────────────────────────────────*/
-#morse-input-area {
+#morse-input-area,
+#together-key-pad {
     min-height: 120px;
     background: var(--surface2);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1rem;
-    cursor: text;
     font-size: .9rem;
     color: var(--text-dim);
     margin: .75rem 0;
     position: relative;
 }
-#morse-input-area:focus {
+#morse-input-area:focus,
+#together-key-pad:focus {
     outline: 2px solid var(--accent);
     color: var(--text);
     border-color: var(--accent-dim);
 }
-#morse-input-area.keying {
+#morse-input-area.keying,
+#together-key-pad.keying {
     background: color-mix(in srgb, var(--accent) 8%, var(--surface2));
     border-color: var(--accent);
+}
+
+#together-key-pad {
+    cursor: pointer;
 }
 
 .letter-display {

@@ -92,7 +92,7 @@ class TogetherMode {
 
         const link = this._buildLink(room);
         document.getElementById('room-link-display').value = link;
-        document.getElementById('room-link-area').hidden = false;
+        document.getElementById('room-link-area').hidden = true;
 
         this._togetherStatus('Connecting…', 'warning');
 
@@ -299,7 +299,7 @@ class TogetherMode {
 
         let text;
 
-        if (beeps.length < 4) {
+        if (!morseAudio.useKMeansDecoding || beeps.length < 4) {
             // Not enough beeps for K-means to cluster reliably.
             // Fall back to simple threshold: <200ms = dot, >=200ms = dash.
             // Build a single morse letter from the beeps and decode it.
@@ -441,6 +441,7 @@ class TogetherMode {
         }, 25000);
 
         this._wsSend({ type: 'join', from: this.myId });
+        document.getElementById('room-link-area').hidden = false;
         this._togetherStatus(`Joined room "${room}" — waiting for peers…`, 'connected');
         this.connected = true;
         this._showSession();

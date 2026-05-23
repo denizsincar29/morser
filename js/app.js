@@ -15,6 +15,7 @@ class MorserApp {
         this.decoder = new MorseDecoder();
         this.keyDownTime = null;
         this.currentOscillator = null;
+        this.useKMeansDecoding = false;
         this.exerciseActive = false;
         this.exerciseGroups = [];
         this.currentGroup = '';
@@ -62,6 +63,17 @@ class MorserApp {
         document.getElementById('sound-mode').addEventListener('change', e => {
             morseAudio.setSoundMode(e.target.value);
             this.updateSoundModeUI(e.target.value);
+            this.saveSettings();
+        });
+
+        document.getElementById('kmeans-decoding').addEventListener('change', e => {
+            this.useKMeansDecoding = e.target.checked;
+            morseAudio.useKMeansDecoding = e.target.checked;
+            this.updateKMeansDecodingUI(e.target.checked);
+            if (!e.target.checked) {
+                this.isDecoderRecording = false;
+                this.lastKeyUpTime = null;
+            }
             this.saveSettings();
         });
 
@@ -137,11 +149,16 @@ class MorserApp {
         }
     }
 
+    updateKMeansDecodingUI(enabled) {
+        document.getElementById('decoder-controls').hidden = !enabled;
+    }
+
     saveSettings() {
         try {
             localStorage.setItem('morser-settings', JSON.stringify({
                 language:    morseData.currentLanguage,
                 soundMode:   morseAudio.soundMode,
+                kmeansDecoding: this.useKMeansDecoding,
                 wpm:         morseAudio.wpm,
                 pitch:       morseAudio.pitch,
                 useStartEnd: morseAudio.useStartEnd,
@@ -172,6 +189,10 @@ class MorserApp {
             document.getElementById('sound-mode').value = soundMode;
             this.updateSoundModeUI(soundMode);
         }
+        this.useKMeansDecoding = !!settings.kmeansDecoding;
+        morseAudio.useKMeansDecoding = this.useKMeansDecoding;
+        document.getElementById('kmeans-decoding').checked = this.useKMeansDecoding;
+        this.updateKMeansDecodingUI(this.useKMeansDecoding);
         if (soundMode === 'synth' && settings.wpm) {
             morseAudio.setWPM(settings.wpm);
             document.getElementById('speed-slider').value = settings.wpm;
@@ -325,12 +346,10 @@ class MorserApp {
         const modeHints = {
             keyboard: '<strong>Keyboard mode:</strong> Just type — each letter is played in morse.<br>Press <kbd>Backspace</kbd> to clear.',
             spacebar: '<strong>Spacebar mode:</strong> Hold <kbd>Space</kbd> — short = dot, long = dash.<br><kbd>←</kbd> forces dot, <kbd>→</kbd> forces dash. <kbd>Enter</kbd> submits letter.',
-            decoder:  '<strong>Decoder mode:</strong> Record your keying then decode it using K-means.<br>Press ⏺ Record, then key with <kbd>Space</kbd>.',
         };
 
         inputMode.addEventListener('change', e => {
             const mode = e.target.value;
-            decoderCtrl.hidden = mode !== 'decoder';
             hintBox.innerHTML = modeHints[mode] || '';
             letterDisp.textContent = '';
             typedOut.textContent = '';
@@ -384,7 +403,7 @@ class MorserApp {
                 return;
             }
 
-            // spacebar / decoder modes
+            // spacebar mode
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
                 letterDisp.textContent = '·';
@@ -404,7 +423,7 @@ class MorserApp {
                 if (!this.keyDownTime) {
                     this.keyDownTime = Date.now();
 
-                    if (mode === 'decoder' && this.isDecoderRecording && this.lastKeyUpTime) {
+                    if (morseAudio.useKMeansDecoding && this.isDecoderRecording && this.lastKeyUpTime) {
                         this.decoder.addPause(this.keyDownTime - this.lastKeyUpTime);
                     }
 
@@ -427,7 +446,7 @@ class MorserApp {
 
         inputArea.addEventListener('keyup', e => {
             const mode = inputMode.value;
-            if (e.key === ' ' && (mode === 'spacebar' || mode === 'decoder')) {
+            if (e.key === ' ' && mode === 'spacebar') {
                 e.preventDefault();
                 this._stopSpacebar(mode, letterDisp);
             }
@@ -436,7 +455,7 @@ class MorserApp {
         // Touch / pointer for mobile
         inputArea.addEventListener('pointerdown', e => {
             const mode = inputMode.value;
-            if (mode === 'spacebar' || mode === 'decoder') {
+            if (mode === 'spacebar') {
                 e.preventDefault();
                 inputArea.focus();
                 if (!this.keyDownTime && !this.currentOscillator) {
@@ -456,7 +475,7 @@ class MorserApp {
         });
         inputArea.addEventListener('pointerup', e => {
             const mode = inputMode.value;
-            if (mode === 'spacebar' || mode === 'decoder') {
+            if (mode === 'spacebar') {
                 e.preventDefault();
                 this._stopSpacebar(mode, letterDisp);
             }
@@ -481,7 +500,9 @@ class MorserApp {
         if (mode === 'spacebar') {
             const isDot = duration < 200;
             letterDisp.textContent = isDot ? '·' : '—';
-        } else if (mode === 'decoder' && this.isDecoderRecording) {
+        }
+
+        if (morseAudio.useKMeansDecoding && this.isDecoderRecording) {
             this.decoder.addBeep(duration);
             this.lastKeyUpTime = Date.now();
             clearTimeout(this._decodeTimeout);
@@ -493,6 +514,7 @@ class MorserApp {
     }
 
     startDecoding() {
+        if (!morseAudio.useKMeansDecoding) return;
         this.decoder.startRecording();
         this.isDecoderRecording = true;
         this.lastKeyUpTime = null;
@@ -505,6 +527,7 @@ class MorserApp {
     }
 
     stopDecoding() {
+        if (!morseAudio.useKMeansDecoding) return;
         this.decoder.stopRecording();
         this.isDecoderRecording = false;
         const decoded = this.decoder.decode();
