@@ -77,8 +77,8 @@ class MorseAudio {
 
     setSoundMode(mode) {
         this.soundMode = mode;
-        if (mode === 'telegraph') this.setWPM(26);
-        else if (mode === 'oldschool') this.setWPM(14);
+        if (mode === 'telegraph') this.setWPM(40);
+        else if (mode === 'oldschool') this.setWPM(15);
     }
 
     stopPlayback() {
@@ -131,18 +131,14 @@ class MorseAudio {
     // Returns duration in seconds
     async _synthElement(isDot, when) {
         const dur = isDot ? this.timing.dot : this.timing.dash;
-        let t = when;
         if (this.useStartEnd) {
-            const d = await this._scheduleSample('start', t);
-            t += d || 0.02;
+            await this._scheduleSample('start', when);
         }
-        if (!this.silentBeep) this._scheduleBeep(dur, t);
-        t += dur / 1000;
+        if (!this.silentBeep) this._scheduleBeep(dur, when);
         if (this.useStartEnd) {
-            const d = await this._scheduleSample('end', t);
-            t += d || 0.02;
+            await this._scheduleSample('end', when + dur / 1000);
         }
-        return t - when;
+        return dur / 1000;
     }
 
     // ── Play dot (standalone, for spacebar mode) ──────────────────────────────

@@ -66,6 +66,7 @@ class MorserApp {
         });
 
         document.getElementById('speed-slider').addEventListener('input', e => {
+            if (document.getElementById('speed-slider').disabled) return;
             const wpm = parseInt(e.target.value);
             document.getElementById('speed-value').textContent = wpm;
             morseAudio.setWPM(wpm);
@@ -94,23 +95,28 @@ class MorserApp {
         const pitchControl = document.getElementById('pitch-control');
         const synthOptions = document.getElementById('synth-options');
         const speedControl = document.getElementById('speed-control');
+        const speedSlider = document.getElementById('speed-slider');
+        const speedValue = document.getElementById('speed-value');
 
         if (mode === 'synth') {
             pitchControl.style.display = '';
             synthOptions.style.display = '';
             speedControl.style.display = '';
+            speedSlider.disabled = false;
             if (this._savedSynthWPM) {
                 morseAudio.setWPM(this._savedSynthWPM);
-                document.getElementById('speed-slider').value = this._savedSynthWPM;
-                document.getElementById('speed-value').textContent = this._savedSynthWPM;
+                speedSlider.value = this._savedSynthWPM;
+                speedValue.textContent = this._savedSynthWPM;
             }
         } else {
             if (morseAudio.soundMode === 'synth') this._savedSynthWPM = morseAudio.wpm;
             pitchControl.style.display = 'none';
             synthOptions.style.display = 'none';
-            // Speed slider stays but is read-only indication
-            const fixedWPM = mode === 'telegraph' ? 26 : 14;
-            document.getElementById('speed-value').textContent = fixedWPM;
+            speedControl.style.display = '';
+            speedSlider.disabled = true;
+            const fixedWPM = mode === 'telegraph' ? 40 : 15;
+            speedSlider.value = fixedWPM;
+            speedValue.textContent = fixedWPM;
         }
     }
 
@@ -143,15 +149,19 @@ class MorserApp {
             morseData.setLanguage(settings.language);
             document.getElementById('language-select').value = settings.language;
         }
+        const soundMode = settings.soundMode || morseAudio.soundMode;
         if (settings.soundMode) {
-            morseAudio.setSoundMode(settings.soundMode);
-            document.getElementById('sound-mode').value = settings.soundMode;
-            this.updateSoundModeUI(settings.soundMode);
+            morseAudio.setSoundMode(soundMode);
+            document.getElementById('sound-mode').value = soundMode;
+            this.updateSoundModeUI(soundMode);
         }
-        if (settings.wpm) {
+        if (soundMode === 'synth' && settings.wpm) {
             morseAudio.setWPM(settings.wpm);
             document.getElementById('speed-slider').value = settings.wpm;
             document.getElementById('speed-value').textContent = settings.wpm;
+        } else if (soundMode !== 'synth') {
+            document.getElementById('speed-slider').value = morseAudio.wpm;
+            document.getElementById('speed-value').textContent = morseAudio.wpm;
         }
         if (settings.pitch) {
             morseAudio.setPitch(settings.pitch);
