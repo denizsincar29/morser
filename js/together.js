@@ -402,13 +402,29 @@ class TogetherMode {
         this.myId = this.myId.replace(/-/g, '').slice(0, 12);
 
         const url = SIGNAL_URL(room, this.myId);
+        console.info('[Together] Connecting to signaling server:', url);
         const ws  = new WebSocket(url);
         this.ws   = ws;
 
         await new Promise((resolve, reject) => {
             const t = setTimeout(() => reject(new Error(`Timeout connecting to ${url}`)), 8000);
             ws.onopen  = () => { clearTimeout(t); resolve(); };
-            ws.onerror = () => { clearTimeout(t); reject(new Error('WebSocket error')); };
+            ws.onerror = (event) => {
+                clearTimeout(t);
+                console.error('[Together] WebSocket error for signaling server:', url, event);
+                reject(new Error(`WebSocket error for ${url}`));
+            };
+            ws.onclose = (event) => {
+                if (ws.readyState !== WebSocket.OPEN) {
+                    clearTimeout(t);
+                    console.error('[Together] WebSocket closed before connect:', url, {
+                        code: event.code,
+                        reason: event.reason,
+                        wasClean: event.wasClean,
+                    });
+                    reject(new Error(`WebSocket closed before connect (${event.code}${event.reason ? `: ${event.reason}` : ''})`));
+                }
+            };
         });
 
         ws.onmessage = async ({ data }) => {
