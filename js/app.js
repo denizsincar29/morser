@@ -33,6 +33,7 @@ class MorserApp {
         this.setupRealtime();
         this.setupExercise();
         this.loadSettings();
+        await window.togetherMode?.applyUrlParams?.();
         this.setStatus('Ready');
     }
 

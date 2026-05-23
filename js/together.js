@@ -42,6 +42,8 @@ class TogetherMode {
         this._myMorseBuffer  = [];   // [{type:'beep'|'pause', duration}]
         this._myKeyDown      = null;
         this._myLastUp       = null;
+        this._pingSeq        = 0;
+        this._pingPending    = new Map(); // id → { started, peerId }
 
         this._setupUI();
     }
@@ -52,6 +54,7 @@ class TogetherMode {
         document.getElementById('connect-room-btn').addEventListener('click', () => this._connectRoom());
         document.getElementById('copy-link-btn').addEventListener('click',   () => this._copyLink());
         document.getElementById('leave-room-btn').addEventListener('click',  () => this.leave());
+        document.getElementById('ping-test-btn').addEventListener('click',   () => this._runPingTest());
 
         const keyPad = document.getElementById('together-key-pad');
         keyPad.addEventListener('keydown',  e => this._onKeyPadDown(e));
@@ -251,7 +254,7 @@ class TogetherMode {
         document.getElementById('together-key-pad').classList.add('keying');
         document.getElementById('together-key-pad').setAttribute('aria-pressed', 'true');
 
-        this._broadcast({ type: 'morse_start', name: this.myName });
+        this._broadcast({ type: 'morse_start', name: this.myName, pitch: morseAudio.pitch });
     }
 
     _endSignal() {
@@ -282,7 +285,7 @@ class TogetherMode {
         }
         this._myMorseBuffer.push({ type: 'beep', duration });
 
-        this._broadcast({ type: 'morse_end', name: this.myName, duration });
+        this._broadcast({ type: 'morse_end', name: this.myName, duration, pitch: morseAudio.pitch });
 
         // Schedule decode of self's buffer
         clearTimeout(this._decoderTimeout);
@@ -329,6 +332,68 @@ class TogetherMode {
         out.scrollTop = out.scrollHeight;
     }
 
+    async _runPingTest() {
+        if (!this.connected) return;
+
+        const openPeers = [...this.peers.entries()].filter(([, peer]) => peer.dc?.readyState === 'open');
+
+        if (openPeers.length === 0) {
+            this._togetherStatus('Ping test needs at least one connected peer.', 'warning');
+            return;
+        }
+
+        const reports = [];
+
+        for (let index = 0; index < openPeers.length; index++) {
+            const [peerId, peer] = openPeers[index];
+            const label = peer.name || peerId.slice(0, 6);
+            this._togetherStatus(`Ping test running: peer ${index + 1}/${openPeers.length} (${label})…`, 'warning');
+
+            const samples = [];
+            for (let i = 0; i < 10; i++) {
+                const rtt = await this._pingPeer(peerId);
+                if (typeof rtt === 'number') samples.push(rtt);
+            }
+
+            if (samples.length === 0) {
+                reports.push(`${label}: no pong received`);
+                continue;
+            }
+
+            const average = samples.reduce((sum, value) => sum + value, 0) / samples.length;
+            const min = Math.min(...samples);
+            const max = Math.max(...samples);
+            const range = max - min;
+            const instability = Math.sqrt(samples.reduce((sum, value) => sum + Math.pow(value - average, 2), 0) / samples.length);
+
+            reports.push(
+                `${label}: avg ${average.toFixed(1)} ms, range ${range.toFixed(1)} ms (${min.toFixed(1)}-${max.toFixed(1)} ms), instability ${instability.toFixed(1)} ms`
+            );
+        }
+
+        this._togetherStatus(`P2P ping done. ${reports.join(' | ')}`, 'connected');
+    }
+
+    _pingPeer(peerId) {
+        const peer = this.peers.get(peerId);
+        if (!peer?.dc || peer.dc.readyState !== 'open') {
+            return Promise.resolve(null);
+        }
+
+        const pingId = `${this.myId}-${++this._pingSeq}-${Date.now()}`;
+        const started = performance.now();
+
+        return new Promise(resolve => {
+            const timeout = setTimeout(() => {
+                this._pingPending.delete(pingId);
+                resolve(null);
+            }, 2000);
+
+            this._pingPending.set(pingId, { started, peerId, timeout, resolve });
+            peer.dc.send(JSON.stringify({ type: 'ping', id: pingId, from: this.myId, started }));
+        });
+    }
+
     // ── Broadcast ─────────────────────────────────────────────────────────────
 
     _broadcast(msg) {
@@ -357,6 +422,7 @@ class TogetherMode {
 
         if (msg.type === 'morse_start') {
             peer.keyDownTime = Date.now();
+            if (typeof msg.pitch === 'number') peer.pitch = msg.pitch;
             if (peer.lastKeyUpTime) {
                 peer.morseBuffer = peer.morseBuffer || [];
                 peer.morseBuffer.push({ type: 'pause', duration: peer.keyDownTime - peer.lastKeyUpTime });
@@ -367,6 +433,8 @@ class TogetherMode {
 
         if (msg.type === 'morse_end') {
             const duration = msg.duration || 100;
+            const pitch = typeof msg.pitch === 'number' ? msg.pitch : (peer.pitch || morseAudio.pitch);
+            peer.pitch = pitch;
             peer.keyDownTime = null;
             peer.lastKeyUpTime = Date.now();
             peer.morseBuffer = peer.morseBuffer || [];
@@ -375,9 +443,11 @@ class TogetherMode {
             const symbol = duration < 200 ? '·' : '—';
             this._setPeerMorse(fromId, symbol);
 
-            // Play audio for remote peer
-            if (duration < 200) morseAudio.playDot();
-            else                morseAudio.playDash();
+            // Play audio for remote peer in-order and at the sender's pitch
+            peer.playbackQueue = (peer.playbackQueue || Promise.resolve()).then(async () => {
+                if (duration < 200) await morseAudio.playDot(pitch);
+                else                await morseAudio.playDash(pitch);
+            }).catch(err => console.error('[Together] remote playback:', err));
 
             // Schedule decode
             clearTimeout(peer._decodeTimeout);
@@ -394,6 +464,24 @@ class TogetherMode {
 
         if (msg.type === 'chat') {
             this._addChatMsgFrom(msg.name || fromId.slice(0,6), msg.text);
+            return;
+        }
+
+        if (msg.type === 'ping') {
+            const peer = this.peers.get(fromId);
+            if (peer?.dc?.readyState === 'open') {
+                peer.dc.send(JSON.stringify({ type: 'pong', id: msg.id, from: this.myId, started: msg.started }));
+            }
+            return;
+        }
+
+        if (msg.type === 'pong') {
+            const pending = this._pingPending.get(msg.id);
+            if (!pending) return;
+
+            clearTimeout(pending.timeout);
+            this._pingPending.delete(msg.id);
+            pending.resolve(performance.now() - pending.started);
             return;
         }
     }
@@ -454,6 +542,31 @@ class TogetherMode {
         this._showSession();
     }
 
+    async applyUrlParams(params = new URLSearchParams(location.search)) {
+        const room = params.get('room')?.trim();
+        const callsign = params.get('callsign')?.trim();
+
+        if (!room && !callsign) return;
+
+        if (callsign) {
+            document.getElementById('my-callsign').value = callsign;
+            this.myName = callsign;
+        }
+
+        if (!room) return;
+
+        document.getElementById('room-name-input').value = room;
+
+        if (window.morserApp?.togglePanel) {
+            window.morserApp.togglePanel('together-panel', 'together-btn');
+        }
+
+        await this._connectRoom();
+
+        const keyPad = document.getElementById('together-key-pad');
+        keyPad?.focus();
+    }
+
     _wsSend(obj) {
         if (this.ws?.readyState === WebSocket.OPEN)
             this.ws.send(JSON.stringify(obj));
@@ -511,6 +624,8 @@ class TogetherMode {
             pendingICE: [],
             name: remoteId.slice(0, 6),
             morseBuffer: [], keyDownTime: null, lastKeyUpTime: null,
+            pitch: morseAudio.pitch,
+            playbackQueue: Promise.resolve(),
         };
         this.peers.set(remoteId, state);
 
@@ -537,6 +652,13 @@ class TogetherMode {
                 this._togetherStatus(`Connected to peer ${remoteId.slice(0,6)}`, 'connected');
             }
             if (s === 'failed' || s === 'closed') {
+                for (const [id, pending] of this._pingPending) {
+                    if (pending.peerId === remoteId) {
+                        clearTimeout(pending.timeout);
+                        pending.resolve(null);
+                        this._pingPending.delete(id);
+                    }
+                }
                 this._removeParticipant(remoteId);
                 this.peers.delete(remoteId);
                 this._updatePeerCount();
@@ -573,6 +695,11 @@ class TogetherMode {
         this._manualLeave = true;
         this.connected = false;
         clearInterval(this._heartbeat);
+        for (const [, pending] of this._pingPending) {
+            clearTimeout(pending.timeout);
+            pending.resolve(null);
+        }
+        this._pingPending.clear();
         this.ws?.close(); this.ws = null;
         for (const [id, p] of this.peers) {
             p.dc?.close(); p.pc?.close();

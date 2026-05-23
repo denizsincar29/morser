@@ -130,14 +130,14 @@ class MorseAudio {
     }
 
     // ── Beep at given AC time, duration in ms, returns duration in s ──────────
-    _scheduleBeep(durationMs, when) {
+    _scheduleBeep(durationMs, when, pitch = this.pitch) {
         this.initAudioContext();
         const start = when;
         const end   = start + durationMs / 1000;
         const osc   = this.audioContext.createOscillator();
         const gain  = this.audioContext.createGain();
         osc.type = 'sine';
-        osc.frequency.value = this.pitch;
+        osc.frequency.value = pitch;
         osc.connect(gain);
         gain.connect(this.audioContext.destination);
         gain.gain.setValueAtTime(0, start);
@@ -151,12 +151,12 @@ class MorseAudio {
 
     // ── Play a single dot/dash in synth mode ──────────────────────────────────
     // Returns duration in seconds
-    async _synthElement(isDot, when) {
+    async _synthElement(isDot, when, pitch = this.pitch) {
         const dur = isDot ? this.timing.dot : this.timing.dash;
         if (this.useStartEnd) {
             await this._scheduleSample('start', when);
         }
-        if (!this.silentBeep) this._scheduleBeep(dur, when);
+        if (!this.silentBeep) this._scheduleBeep(dur, when, pitch);
         if (this.useStartEnd) {
             await this._scheduleSample('end', when + dur / 1000);
         }
@@ -164,13 +164,13 @@ class MorseAudio {
     }
 
     // ── Play dot (standalone, for spacebar mode) ──────────────────────────────
-    async playDot() {
+    async playDot(pitch = this.pitch) {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
         const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
-            dur = await this._synthElement(true, when);
+            dur = await this._synthElement(true, when, pitch);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
             dur = await this._scheduleSample(name, when) || timing.dot / 1000;
@@ -178,13 +178,13 @@ class MorseAudio {
         await this._sleep(dur * 1000);
     }
 
-    async playDash() {
+    async playDash(pitch = this.pitch) {
         this.initAudioContext();
         const when = this.audioContext.currentTime;
         const timing = this._getPlaybackTiming();
         let dur;
         if (this.soundMode === 'synth') {
-            dur = await this._synthElement(false, when);
+            dur = await this._synthElement(false, when, pitch);
         } else {
             const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
             dur = await this._scheduleSample(name, when) || timing.dash / 1000;
