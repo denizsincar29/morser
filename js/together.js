@@ -49,8 +49,7 @@ class TogetherMode {
     // ── UI wiring ────────────────────────────────────────────────────────────
 
     _setupUI() {
-        document.getElementById('create-room-btn').addEventListener('click', () => this._createOrJoin(true));
-        document.getElementById('join-room-btn').addEventListener('click',   () => this._createOrJoin(false));
+        document.getElementById('connect-room-btn').addEventListener('click', () => this._connectRoom());
         document.getElementById('copy-link-btn').addEventListener('click',   () => this._copyLink());
         document.getElementById('leave-room-btn').addEventListener('click',  () => this.leave());
 
@@ -78,12 +77,12 @@ class TogetherMode {
         }
     }
 
-    async _createOrJoin(isCreate) {
+    async _connectRoom() {
         const roomInput = document.getElementById('room-name-input').value.trim();
         const callsign  = document.getElementById('my-callsign').value.trim() || 'Anon';
         const room      = roomInput || this._generateRoomName();
 
-        if (!roomInput && isCreate) {
+        if (!roomInput) {
             document.getElementById('room-name-input').value = room;
         }
 
@@ -442,6 +441,9 @@ class TogetherMode {
 
         this._wsSend({ type: 'join', from: this.myId });
         document.getElementById('room-link-area').hidden = false;
+        const linkInput = document.getElementById('room-link-display');
+        linkInput.focus();
+        linkInput.select();
         this._togetherStatus(`Joined room "${room}" — waiting for peers…`, 'connected');
         this.connected = true;
         this._showSession();

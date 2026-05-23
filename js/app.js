@@ -343,6 +343,8 @@ class MorserApp {
         const decoderCtrl = document.getElementById('decoder-controls');
         const hintBox     = document.getElementById('key-hint');
 
+        this.realtimeInputArea = inputArea;
+
         const modeHints = {
             keyboard: '<strong>Keyboard mode:</strong> Just type — each letter is played in morse.<br>Press <kbd>Backspace</kbd> to clear.',
             spacebar: '<strong>Spacebar mode:</strong> Hold <kbd>Space</kbd> — short = dot, long = dash.<br><kbd>←</kbd> forces dot, <kbd>→</kbd> forces dash. <kbd>Enter</kbd> submits letter.',
@@ -382,6 +384,14 @@ class MorserApp {
         // ── Keyboard events ──────────────────────────────────────────────────
         inputArea.addEventListener('keydown', async e => {
             const mode = inputMode.value;
+
+            if (this.useKMeansDecoding && mode === 'spacebar' && e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+                e.preventDefault();
+                if (this.isDecoderRecording) this.stopDecoding();
+                else this.startDecoding();
+                inputArea.focus();
+                return;
+            }
 
             if (mode === 'keyboard') {
                 if (e.key === 'Backspace') {
@@ -518,12 +528,13 @@ class MorserApp {
         this.decoder.startRecording();
         this.isDecoderRecording = true;
         this.lastKeyUpTime = null;
+        this.realtimeInputArea?.focus();
         document.getElementById('start-recording-btn').disabled = true;
         document.getElementById('stop-recording-btn').disabled = false;
         document.getElementById('clear-recording-btn').disabled = false;
         document.getElementById('decoded-output').textContent = '';
         document.getElementById('decoder-download-row').hidden = true;
-        this.setStatus('Recording — key with spacebar', 'warn');
+        this.setStatus('Recording started. Key with spacebar.', 'warn');
     }
 
     stopDecoding() {
@@ -535,7 +546,7 @@ class MorserApp {
         document.getElementById('start-recording-btn').disabled = false;
         document.getElementById('stop-recording-btn').disabled = true;
         document.getElementById('decoder-download-row').hidden = false;
-        this.setStatus(`Decoded ${decoded.length} characters`, 'ok');
+        this.setStatus(`Recording stopped. Decoded ${decoded.length} characters.`, 'ok');
     }
 
     // ── Exercise ────────────────────────────────────────────────────────────────
