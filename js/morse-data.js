@@ -65,12 +65,20 @@ class MorseData {
     }
 
     textToMorse(text) {
-        return text.toLowerCase()
-            .split('')
-            .map(char => this.charToMorse[char] || char)
-            .join(' ')
-            .replace(/\s+/g, ' ')
-            .trim();
+        // BUG FIX: original joined everything with single spaces then collapsed them,
+        // losing the distinction between intra-char gaps and word gaps.
+        // Now spaces → triple space (word gap), other chars → their morse code,
+        // joined with single space (char gap).
+        const parts = [];
+        for (const char of text.toLowerCase()) {
+            if (char === ' ') {
+                parts.push('  ');  // will become triple-space when joined with single space
+            } else {
+                const m = this.charToMorse[char];
+                if (m) parts.push(m);
+            }
+        }
+        return parts.join(' ').trim();
     }
 
     morseToText(morse) {

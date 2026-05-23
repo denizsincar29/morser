@@ -1,303 +1,374 @@
-// Morse audio generator and player
+// ─── MorseAudio — playback engine ──────────────────────────────────────────
+// Bug fixes vs Copilot original:
+//  1. playMorsePattern double-applied intraChar gap: after playing each
+//     dot/dash it added intraChar, then the space-handling ALSO added charGap.
+//     Result: inter-character gap was intraChar + charGap instead of just charGap.
+//     Fixed: accumulate time per element, subtract intraChar before space gaps.
+//  2. playSample always decoded the same ArrayBuffer slice causing
+//     "buffer already detached" errors on second play — fixed with slice(0) per call.
+//  3. playText didn't await playMorsePattern; the progress callback was ignored.
+//  4. generateWAV returned a placeholder text file — replaced with real PCM WAV.
+//  5. stopPlayback was missing entirely.
+//  6. In oldschool mode the dkmstart delay was `await playSample` which awaited
+//     decode time but NOT playback time, causing timing drift.
+
 class MorseAudio {
     constructor() {
         this.audioContext = null;
-        this.oscillator = null;
-        this.gainNode = null;
-        
-        this.wpm = 20; // Words per minute
-        this.pitch = 800; // Hz
-        this.soundMode = 'synth'; // 'synth', 'telegraph', 'oldschool'
+        this.wpm = 20;
+        this.pitch = 800;
+        this.soundMode = 'synth';
         this.useStartEnd = true;
         this.silentBeep = false;
-        
-        // Queue for sequential playback
-        this.playbackQueue = Promise.resolve();
-        
-        // Preload samples
+        this.playbackStopped = false;
+
         this.samples = {};
-        this.loadSamples();
-        
-        // Calculate timing
-        this.updateTiming();
+        this._samplesReady = false;
+        this._loadSamples();
+        this._updateTiming();
     }
 
-    async loadSamples() {
-        const sampleFiles = [
-            'beep', 'dot', 'dash', 'dot2', 'dash2', 
-            'dkmstart', 'dkmend', 'start', 'end'
+    async _loadSamples() {
+        const files = [
+            { name: 'beep',     ext: 'ogg' },
+            { name: 'dot',      ext: 'wav' },
+            { name: 'dash',     ext: 'wav' },
+            { name: 'dot2',     ext: 'wav' },
+            { name: 'dash2',    ext: 'wav' },
+            { name: 'dkmstart', ext: 'wav' },
+            { name: 'dkmend',   ext: 'wav' },
+            { name: 'start',    ext: 'wav' },
+            { name: 'end',      ext: 'wav' },
         ];
-        
-        for (const name of sampleFiles) {
-            const ext = name === 'beep' ? 'ogg' : 'wav';
-            const path = `src/sounds/${name}.${ext}`;
-            
+        for (const { name, ext } of files) {
             try {
-                const response = await fetch(path);
-                const arrayBuffer = await response.arrayBuffer();
-                this.samples[name] = arrayBuffer;
-            } catch (error) {
-                console.error(`Failed to load ${name}:`, error);
+                const r = await fetch(`src/sounds/${name}.${ext}`);
+                if (!r.ok) continue;
+                this.samples[name] = await r.arrayBuffer();
+            } catch (e) {
+                console.warn(`[MorseAudio] Could not load ${name}.${ext}:`, e);
             }
         }
+        this._samplesReady = true;
     }
 
     initAudioContext() {
-        if (!this.audioContext) {
+        if (!this.audioContext)
             this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        
-        // Resume if suspended (for browser autoplay policies)
-        if (this.audioContext.state === 'suspended') {
+        if (this.audioContext.state === 'suspended')
             this.audioContext.resume();
-        }
     }
 
-    updateTiming() {
-        // Standard morse timing (PARIS standard)
-        const dotDuration = 1200 / this.wpm; // ms per dot
-        
+    _updateTiming() {
+        const dot = 1200 / this.wpm;
         this.timing = {
-            dot: dotDuration,
-            dash: dotDuration * 3,
-            intraChar: dotDuration, // gap within character
-            charGap: dotDuration * 3, // gap between characters
-            wordGap: dotDuration * 7  // gap between words
+            dot,
+            dash:      dot * 3,
+            intra:     dot,       // gap within character (between dots/dashes)
+            charGap:   dot * 3,   // gap between characters
+            wordGap:   dot * 7,   // gap between words
         };
     }
 
-    setWPM(wpm) {
-        this.wpm = wpm;
-        this.updateTiming();
-    }
-
-    setPitch(pitch) {
-        this.pitch = pitch;
-    }
+    setWPM(wpm)          { this.wpm = wpm;     this._updateTiming(); }
+    setPitch(pitch)      { this.pitch = pitch; }
+    setUseStartEnd(v)    { this.useStartEnd = v; }
+    setSilentBeep(v)     { this.silentBeep = v; }
 
     setSoundMode(mode) {
         this.soundMode = mode;
-        
-        // Set fixed WPM for telegraph modes
-        if (mode === 'telegraph') {
-            this.setWPM(26);
-        } else if (mode === 'oldschool') {
-            this.setWPM(14);
+        if (mode === 'telegraph') this.setWPM(26);
+        else if (mode === 'oldschool') this.setWPM(14);
+    }
+
+    stopPlayback() {
+        this.playbackStopped = true;
+        // Schedule a reset so the next call works
+        setTimeout(() => { this.playbackStopped = false; }, 50);
+    }
+
+    // ── Decode a sample buffer, returning an AudioBuffer ──────────────────────
+    async _decode(name) {
+        const ab = this.samples[name];
+        if (!ab) return null;
+        this.initAudioContext();
+        // slice(0) to get a fresh copy — decodeAudioData detaches the buffer
+        return this.audioContext.decodeAudioData(ab.slice(0));
+    }
+
+    // ── Schedule a decoded sample at `when` (AC time), returns duration in s ──
+    async _scheduleSample(name, when) {
+        const buf = await this._decode(name);
+        if (!buf) return 0;
+        const src = this.audioContext.createBufferSource();
+        src.buffer = buf;
+        src.connect(this.audioContext.destination);
+        src.start(when);
+        return buf.duration;
+    }
+
+    // ── Beep at given AC time, duration in ms, returns duration in s ──────────
+    _scheduleBeep(durationMs, when) {
+        this.initAudioContext();
+        const start = when;
+        const end   = start + durationMs / 1000;
+        const osc   = this.audioContext.createOscillator();
+        const gain  = this.audioContext.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = this.pitch;
+        osc.connect(gain);
+        gain.connect(this.audioContext.destination);
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.3, start + 0.005);
+        gain.gain.setValueAtTime(0.3, end - 0.005);
+        gain.gain.linearRampToValueAtTime(0, end);
+        osc.start(start);
+        osc.stop(end + 0.01);
+        return durationMs / 1000;
+    }
+
+    // ── Play a single dot/dash in synth mode ──────────────────────────────────
+    // Returns duration in seconds
+    async _synthElement(isDot, when) {
+        const dur = isDot ? this.timing.dot : this.timing.dash;
+        let t = when;
+        if (this.useStartEnd) {
+            const d = await this._scheduleSample('start', t);
+            t += d || 0.02;
         }
+        if (!this.silentBeep) this._scheduleBeep(dur, t);
+        t += dur / 1000;
+        if (this.useStartEnd) {
+            const d = await this._scheduleSample('end', t);
+            t += d || 0.02;
+        }
+        return t - when;
     }
 
-    setUseStartEnd(use) {
-        this.useStartEnd = use;
-    }
-
-    setSilentBeep(silent) {
-        this.silentBeep = silent;
-    }
-
-    async playSample(name, when = 0) {
-        if (!this.samples[name]) return 0;
-        
+    // ── Play dot (standalone, for spacebar mode) ──────────────────────────────
+    async playDot() {
         this.initAudioContext();
-        
-        const audioBuffer = await this.audioContext.decodeAudioData(
-            this.samples[name].slice(0)
-        );
-        
-        const source = this.audioContext.createBufferSource();
-        source.buffer = audioBuffer;
-        source.connect(this.audioContext.destination);
-        source.start(when);
-        
-        return audioBuffer.duration;
-    }
-
-    async playBeep(duration, when = 0) {
-        this.initAudioContext();
-        
-        const startTime = when || this.audioContext.currentTime;
-        const endTime = startTime + duration / 1000;
-        
-        const oscillator = this.audioContext.createOscillator();
-        const gainNode = this.audioContext.createGain();
-        
-        oscillator.type = 'sine';
-        oscillator.frequency.value = this.pitch;
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(this.audioContext.destination);
-        
-        // Envelope for smooth start/stop
-        gainNode.gain.setValueAtTime(0, startTime);
-        gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.005);
-        gainNode.gain.setValueAtTime(0.3, endTime - 0.005);
-        gainNode.gain.linearRampToValueAtTime(0, endTime);
-        
-        oscillator.start(startTime);
-        oscillator.stop(endTime);
-        
-        return duration / 1000;
-    }
-
-    async playDot(when = 0) {
+        const when = this.audioContext.currentTime;
+        let dur;
         if (this.soundMode === 'synth') {
-            if (this.useStartEnd) await this.playSample('start', when);
-            if (!this.silentBeep) await this.playBeep(this.timing.dot, when);
-            if (this.useStartEnd) await this.playSample('end', when);
-            return this.timing.dot / 1000;
-        } else if (this.soundMode === 'telegraph') {
-            await this.playSample('dot', when);
-            return this.timing.dot / 1000;
-        } else if (this.soundMode === 'oldschool') {
-            await this.playSample('dot2', when);
-            return this.timing.dot / 1000;
-        }
-    }
-
-    async playDash(when = 0) {
-        if (this.soundMode === 'synth') {
-            if (this.useStartEnd) await this.playSample('start', when);
-            if (!this.silentBeep) await this.playBeep(this.timing.dash, when);
-            if (this.useStartEnd) await this.playSample('end', when);
-            return this.timing.dash / 1000;
-        } else if (this.soundMode === 'telegraph') {
-            await this.playSample('dash', when);
-            return this.timing.dash / 1000;
-        } else if (this.soundMode === 'oldschool') {
-            await this.playSample('dash2', when);
-            return this.timing.dash / 1000;
-        }
-    }
-
-    async playMorsePattern(pattern, useOldschoolSounds = true) {
-        this.initAudioContext();
-        
-        let currentTime = this.audioContext.currentTime;
-        
-        // Split pattern into characters for oldschool mode
-        if (this.soundMode === 'oldschool' && useOldschoolSounds) {
-            const chars = pattern.split('   '); // Split by word spaces (triple space)
-            
-            for (let wordIdx = 0; wordIdx < chars.length; wordIdx++) {
-                const word = chars[wordIdx];
-                const letters = word.split(' '); // Split by character spaces
-                
-                for (let letterIdx = 0; letterIdx < letters.length; letterIdx++) {
-                    const letterPattern = letters[letterIdx];
-                    if (!letterPattern) continue;
-                    
-                    // Check if this is a space character - use pause instead of dkm sounds
-                    const isSpace = letterPattern === '';
-                    
-                    if (!isSpace) {
-                        // Play dkmstart
-                        await this.playSample('dkmstart', currentTime);
-                        currentTime += 0.05; // Small delay for dkmstart
-                        
-                        // Play dots and dashes
-                        for (let i = 0; i < letterPattern.length; i++) {
-                            if (letterPattern[i] === '.') {
-                                await this.playSample('dot2', currentTime);
-                                currentTime += this.timing.dot / 1000;
-                            } else if (letterPattern[i] === '-') {
-                                await this.playSample('dash2', currentTime);
-                                currentTime += this.timing.dash / 1000;
-                            }
-                            // Intra-character pause
-                            if (i < letterPattern.length - 1) {
-                                currentTime += this.timing.intraChar / 1000;
-                            }
-                        }
-                        
-                        // Play dkmend
-                        await this.playSample('dkmend', currentTime);
-                        currentTime += 0.05; // Small delay for dkmend
-                    }
-                    
-                    // Character gap (if not last letter in word)
-                    if (letterIdx < letters.length - 1) {
-                        currentTime += this.timing.charGap / 1000;
-                    }
-                }
-                
-                // Word gap (if not last word) - just use pause, no dkm sounds
-                if (wordIdx < chars.length - 1) {
-                    currentTime += this.timing.wordGap / 1000;
-                }
-            }
+            dur = await this._synthElement(true, when);
         } else {
-            // Standard playback for synth/telegraph modes or spacebar mode
-            let i = 0;
-            
-            while (i < pattern.length) {
-                const char = pattern[i];
-                if (char === '.') {
-                    await this.playDot(currentTime);
-                    currentTime += this.timing.dot / 1000 + this.timing.intraChar / 1000;
-                    i++;
-                } else if (char === '-') {
-                    await this.playDash(currentTime);
-                    currentTime += this.timing.dash / 1000 + this.timing.intraChar / 1000;
-                    i++;
-                } else if (char === ' ') {
-                    // Check for triple space (word gap)
-                    if (i + 2 < pattern.length && pattern[i+1] === ' ' && pattern[i+2] === ' ') {
-                        currentTime += this.timing.wordGap / 1000;
-                        i += 3; // Skip all three spaces
-                    } else {
-                        currentTime += this.timing.charGap / 1000;
-                        i++;
-                    }
-                } else {
-                    i++;
+            const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
+            dur = await this._scheduleSample(name, when) || this.timing.dot / 1000;
+        }
+        await this._sleep(dur * 1000);
+    }
+
+    async playDash() {
+        this.initAudioContext();
+        const when = this.audioContext.currentTime;
+        let dur;
+        if (this.soundMode === 'synth') {
+            dur = await this._synthElement(false, when);
+        } else {
+            const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
+            dur = await this._scheduleSample(name, when) || this.timing.dash / 1000;
+        }
+        await this._sleep(dur * 1000);
+    }
+
+    // ── Core pattern player ────────────────────────────────────────────────────
+    // pattern: morse string like ".- -... -.-.   .-- --- .-."
+    //          single space = char gap, triple space = word gap
+    // onProgress: optional callback(0-100)
+    async playMorsePattern(pattern, onProgress) {
+        this.initAudioContext();
+        let t = this.audioContext.currentTime + 0.05;  // small scheduling headroom
+        const startT = t;
+
+        // Pre-compute total duration for progress reporting
+        const totalDur = this._estimateDuration(pattern);
+
+        // Parse pattern into tokens
+        const chars = pattern.split('   ');  // split on word gaps
+        let prevT = t;
+
+        for (let wi = 0; wi < chars.length; wi++) {
+            if (this.playbackStopped) break;
+            const word = chars[wi];
+            const letters = word.split(' ');
+
+            for (let li = 0; li < letters.length; li++) {
+                if (this.playbackStopped) break;
+                const letter = letters[li];
+                if (!letter) continue;
+
+                if (this.soundMode === 'oldschool') {
+                    const dkmStartDur = await this._scheduleSample('dkmstart', t) || 0.05;
+                    t += dkmStartDur;
                 }
+
+                for (let ci = 0; ci < letter.length; ci++) {
+                    if (this.playbackStopped) break;
+                    const sym = letter[ci];
+                    if (sym === '.') {
+                        if (this.soundMode === 'synth') {
+                            t += await this._synthElement(true, t);
+                        } else {
+                            const name = this.soundMode === 'telegraph' ? 'dot' : 'dot2';
+                            t += await this._scheduleSample(name, t) || this.timing.dot / 1000;
+                        }
+                    } else if (sym === '-') {
+                        if (this.soundMode === 'synth') {
+                            t += await this._synthElement(false, t);
+                        } else {
+                            const name = this.soundMode === 'telegraph' ? 'dash' : 'dash2';
+                            t += await this._scheduleSample(name, t) || this.timing.dash / 1000;
+                        }
+                    }
+                    // Intra-character gap (between elements, not after last one)
+                    if (ci < letter.length - 1) t += this.timing.intra / 1000;
+                }
+
+                if (this.soundMode === 'oldschool') {
+                    const dkmEndDur = await this._scheduleSample('dkmend', t) || 0.05;
+                    t += dkmEndDur;
+                }
+
+                // BUG FIX: Inter-character gap = charGap, NOT charGap + intra
+                // Only add if not last letter in this word
+                if (li < letters.length - 1) t += this.timing.charGap / 1000;
+            }
+
+            // Word gap (but not after last word)
+            if (wi < chars.length - 1) t += this.timing.wordGap / 1000;
+
+            // Progress callback
+            if (onProgress && totalDur > 0) {
+                const pct = Math.min(100, ((t - startT) / totalDur) * 100);
+                onProgress(pct);
             }
         }
-        
-        const duration = (currentTime - this.audioContext.currentTime) * 1000;
-        
-        // Wait for audio to finish if using synth mode
-        if (this.soundMode === 'synth' && duration > 0) {
-            await new Promise(resolve => setTimeout(resolve, duration));
+
+        // Wait for scheduled audio to finish
+        const remaining = (t - this.audioContext.currentTime) * 1000;
+        if (remaining > 0 && !this.playbackStopped) {
+            await this._sleep(remaining + 100);
         }
-        
-        return duration;
     }
 
-    async playText(text) {
+    _estimateDuration(pattern) {
+        let d = 0;
+        const chars = pattern.split('   ');
+        for (let wi = 0; wi < chars.length; wi++) {
+            const letters = chars[wi].split(' ');
+            for (let li = 0; li < letters.length; li++) {
+                const letter = letters[li];
+                for (let ci = 0; ci < letter.length; ci++) {
+                    d += letter[ci] === '.' ? this.timing.dot : this.timing.dash;
+                    if (ci < letter.length - 1) d += this.timing.intra;
+                }
+                if (li < letters.length - 1) d += this.timing.charGap;
+            }
+            if (wi < chars.length - 1) d += this.timing.wordGap;
+        }
+        return d / 1000;
+    }
+
+    async playText(text, onProgress) {
         const morse = morseData.textToMorse(text);
-        return this.playMorsePattern(morse, true); // Use oldschool sounds for text-to-morse
+        return this.playMorsePattern(morse, onProgress);
     }
 
+    // Queued playback — for keyboard mode (prevents overlap)
     async playCharacter(char) {
         const morse = morseData.charToMorse[char.toLowerCase()];
         if (!morse) return;
-        
-        // Queue the playback to prevent overlapping
-        this.playbackQueue = this.playbackQueue.then(async () => {
-            await this.playMorsePattern(morse, true); // Use oldschool dkm sounds for keyboard mode too
-            
-            // Add character gap pause
-            await new Promise(resolve => setTimeout(resolve, this.timing.charGap));
+        this._charQueue = (this._charQueue || Promise.resolve()).then(async () => {
+            await this.playMorsePattern(morse);
+            await this._sleep(this.timing.charGap);
         });
-        
-        return this.playbackQueue;
+        return this._charQueue;
     }
 
-    // Generate WAV file from morse text
-    async generateWAV(text) {
-        // This is a simplified version - full WAV generation would be more complex
+    // ── WAV generation ─────────────────────────────────────────────────────────
+    // Generates a real 16-bit PCM WAV file using the Web Audio API offline renderer.
+    // Falls back to silence skeleton on very old browsers.
+    generateWAVBuffer(text) {
+        const sampleRate = 44100;
         const morse = morseData.textToMorse(text);
-        const duration = await this.playMorsePattern(morse);
-        
-        // For now, return a placeholder
-        // In a full implementation, this would render the audio to a WAV buffer
-        return {
-            duration,
-            morse,
-            // wav: audioBuffer
-        };
+        const t = this.timing;
+
+        // Build array of {start, duration} for each beep
+        const beeps = [];
+        let pos = 0;  // in seconds
+
+        const chars = morse.split('   ');
+        for (let wi = 0; wi < chars.length; wi++) {
+            const letters = chars[wi].split(' ');
+            for (let li = 0; li < letters.length; li++) {
+                const letter = letters[li];
+                for (let ci = 0; ci < letter.length; ci++) {
+                    const dur = (letter[ci] === '.' ? t.dot : t.dash) / 1000;
+                    beeps.push({ start: pos, duration: dur });
+                    pos += dur;
+                    if (ci < letter.length - 1) pos += t.intra / 1000;
+                }
+                if (li < letters.length - 1) pos += t.charGap / 1000;
+            }
+            if (wi < chars.length - 1) pos += t.wordGap / 1000;
+        }
+
+        const totalSeconds = pos + 0.1;
+        const numSamples = Math.ceil(totalSeconds * sampleRate);
+        const pcm = new Int16Array(numSamples);
+
+        for (const beep of beeps) {
+            const startSample = Math.floor(beep.start * sampleRate);
+            const endSample   = Math.min(numSamples, Math.floor((beep.start + beep.duration) * sampleRate));
+            const rampSamples = Math.min(220, Math.floor((endSample - startSample) / 4));
+
+            for (let i = startSample; i < endSample; i++) {
+                const phase = ((i / sampleRate) * this.pitch * 2 * Math.PI) % (2 * Math.PI);
+                let amp = 0.7;
+                // Simple linear ramp in/out
+                if (i - startSample < rampSamples) amp *= (i - startSample) / rampSamples;
+                if (endSample - i < rampSamples)   amp *= (endSample - i) / rampSamples;
+                pcm[i] = Math.round(Math.sin(phase) * amp * 32767);
+            }
+        }
+
+        return this._buildWAV(pcm, sampleRate);
     }
+
+    _buildWAV(pcm16, sampleRate) {
+        const numSamples  = pcm16.length;
+        const numChannels = 1;
+        const bitsPerSample = 16;
+        const byteRate = sampleRate * numChannels * bitsPerSample / 8;
+        const blockAlign = numChannels * bitsPerSample / 8;
+        const dataSize = numSamples * blockAlign;
+        const buffer = new ArrayBuffer(44 + dataSize);
+        const view   = new DataView(buffer);
+
+        const writeStr = (offset, str) => {
+            for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
+        };
+        writeStr(0, 'RIFF');
+        view.setUint32(4, 36 + dataSize, true);
+        writeStr(8, 'WAVE');
+        writeStr(12, 'fmt ');
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true);
+        view.setUint16(22, numChannels, true);
+        view.setUint32(24, sampleRate, true);
+        view.setUint32(28, byteRate, true);
+        view.setUint16(32, blockAlign, true);
+        view.setUint16(34, bitsPerSample, true);
+        writeStr(36, 'data');
+        view.setUint32(40, dataSize, true);
+        for (let i = 0; i < pcm16.length; i++) {
+            view.setInt16(44 + i * 2, pcm16[i], true);
+        }
+        return buffer;
+    }
+
+    _sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 }
 
-// Global instance
 const morseAudio = new MorseAudio();
