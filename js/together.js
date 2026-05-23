@@ -288,20 +288,36 @@ class TogetherMode {
             this._myLastUp = null;
             this._setMyMorse('');
             document.getElementById('together-letter-display').textContent = '';
-        }, 1500);
+        }, 2000);
     }
 
     _decodeAndAppendTranscript(name, buffer) {
-        if (buffer.length < 2) return;
-        const dec = new MorseDecoder();
-        dec.startRecording();
-        for (const ev of buffer) {
-            if (ev.type === 'beep')  dec.addBeep(ev.duration);
-            if (ev.type === 'pause') dec.addPause(ev.duration);
+        if (!buffer || buffer.length === 0) return;
+
+        const beeps = buffer.filter(e => e.type === 'beep');
+        if (beeps.length === 0) return;
+
+        let text;
+
+        if (beeps.length < 4) {
+            // Not enough beeps for K-means to cluster reliably.
+            // Fall back to simple threshold: <200ms = dot, >=200ms = dash.
+            // Build a single morse letter from the beeps and decode it.
+            const dotDash = beeps.map(b => b.duration < 200 ? '.' : '-').join('');
+            text = morseData.morseToChar[dotDash] || dotDash;
+        } else {
+            const dec = new MorseDecoder();
+            dec.startRecording();
+            for (const ev of buffer) {
+                if (ev.type === 'beep')  dec.addBeep(ev.duration);
+                if (ev.type === 'pause') dec.addPause(ev.duration);
+            }
+            dec.stopRecording();
+            text = dec.decode();
         }
-        dec.stopRecording();
-        const text = dec.decode();
+
         if (!text) return;
+
         const out = document.getElementById('transcript-output');
         const line = document.createElement('div');
         line.innerHTML = `<span style="color:var(--accent)">${this._esc(name)}:</span> ${this._esc(text)}`;
@@ -368,7 +384,7 @@ class TogetherMode {
                 peer.morseBuffer = [];
                 peer.lastKeyUpTime = null;
                 this._setPeerMorse(fromId, '');
-            }, 1500);
+            }, 2000);
             return;
         }
 
