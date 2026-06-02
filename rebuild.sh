@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# rebuild.sh — deploy Morser static frontend to the web root
+# rebuild.sh — deploy Morser static frontend to /var/www/html/morser
 #
 # What it does:
 #   • Copies every static frontend file (HTML, CSS, JS, sounds, icons, manifest, SW)
@@ -19,7 +19,7 @@
 set -euo pipefail
 
 SRC="$(cd "$(dirname "$0")" && pwd)"
-DEST="${1:-/var/www/html/denizsincar.ru/morser}"
+DEST="${1:-/var/www/html/morser}"
 
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
